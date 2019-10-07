@@ -4,19 +4,17 @@ import { Observable } from 'rxjs';
 import { Componente } from 'src/app/interfaces/interfaces';
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.page.html',
-  styleUrls: ['./inicio.page.scss'],
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss'],
 })
-export class InicioPage implements OnInit {
+export class MenuComponent implements OnInit {
 
   componentes: Observable<Componente[]>;
-  constructor(private dataService: DataService) { }
+  constructor( private dataService: DataService) { }
 
   ngOnInit() {
     this.componentes = this.dataService.getMenu();
   }
 
 }
-
-

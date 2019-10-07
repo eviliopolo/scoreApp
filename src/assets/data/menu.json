@@ -1,0 +1,42 @@
+[
+    {
+        "icon": "contacts",
+        "name": "Mi perfil",
+        "redirectTo": "/miperfil"
+    },
+    {
+        "icon": "car",
+        "name": "Activos",
+        "redirectTo": "/activos"
+    },
+    {
+        "icon": "checkmark-circle-outline",
+        "name": "Finalizados",
+        "redirectTo": "/finalizados"
+    },
+    {
+        "icon": "radio-button-on",
+        "name": "Mis puntos",
+        "redirectTo": "/mispuntos"
+    },   
+   
+    {
+      "icon": "appstore",
+      "name": "Contenidos",
+      "redirectTo": "/contenidos"
+    },
+   
+   
+    {
+      "icon": "card",
+      "name": "Micro Contenidos",
+      "redirectTo": "/microcontenidos"
+    },
+    
+    {
+      "icon": "hammer",
+      "name": "Preguntas",
+      "redirectTo": "/preguntas"
+    }    
+  ]
+  
