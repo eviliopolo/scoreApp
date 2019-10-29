@@ -24,7 +24,7 @@ export class AuthenticationService {
             
                 return new Promise( resolve => {
 
-                  const valido  = false;
+                  /*const valido  = false;
                   if (valido)
                   {
                      this.guardarToken( 'Barer Metal' );
@@ -34,23 +34,24 @@ export class AuthenticationService {
                     this.token = null;
                     this.storage.clear();
                     resolve(false);
-                  }
+                  }*/
 
             
-                  /*this.http.post(`${ URL }/user/login`, data )
+                  this.http.post(`${ URL }/api/score/login`, data )
                     .subscribe( async resp => {
                       console.log(resp);
             
-                      if ( resp['ok'] ) {
-                        await this.guardarToken( resp['token'] );
+                      if ( resp['Response'] ) {
+                        await this.guardarToken('Barrer Metal MD105');
                         resolve(true);
                       } else {
                         this.token = null;
                         this.storage.clear();
                         resolve(false);
                       }
+                      resolve(false);
             
-                    });*/
+                    });
             
                 });
             
