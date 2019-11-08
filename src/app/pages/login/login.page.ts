@@ -57,7 +57,7 @@ export class LoginPage implements OnInit {
 
     if ( fRegistro.invalid ) { return; }
 
-    const valido = await this.usuarioService.registro( this.registerUser );
+    const valido = await this.usuarioService.registro( this.registerUser.email,this.registerUser.password );
 
     if ( valido ) {
       // navegar al tabs

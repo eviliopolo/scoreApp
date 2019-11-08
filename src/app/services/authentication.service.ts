@@ -64,16 +64,16 @@ export class AuthenticationService {
                 this.navCtrl.navigateRoot('/login', { animated: true });
               }
             
-              registro( usuario: Usuario ) {
-            
+              registro( email: string, password: string  ) {
+                const data = { email, password,ConfirmPassword:password };
                 return new Promise( resolve => {
             
-                  this.http.post(`${ URL }/user/create`, usuario )
+                  this.http.post(`${ URL }/api/score/register`, data )
                       .subscribe( async resp => {
                         console.log(resp);
             
-                        if ( resp['ok'] ) {
-                          await this.guardarToken( resp['token'] );
+                        if ( resp['Response'] ) {
+                          await this.guardarToken('Barrer Metal MD105');
                           resolve(true);
                         } else {
                           this.token = null;
