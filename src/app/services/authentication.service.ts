@@ -19,23 +19,8 @@ export class AuthenticationService {
               private navCtrl: NavController ) {}
 
               login( email: string, password: string ) {
-
-                const data = { email, password };
-            
-                return new Promise( resolve => {
-
-                  /*const valido  = false;
-                  if (valido)
-                  {
-                     this.guardarToken( 'Barer Metal' );
-                     resolve(true);
-                  }
-                  else {
-                    this.token = null;
-                    this.storage.clear();
-                    resolve(false);
-                  }*/
-
+                const data = { email, password };            
+                return new Promise( resolve => {              
             
                   this.http.post(`${ URL }/api/score/login`, data )
                     .subscribe( async resp => {
@@ -49,12 +34,9 @@ export class AuthenticationService {
                         this.storage.clear();
                         resolve(false);
                       }
-                      resolve(false);
-            
-                    });
-            
-                });
-            
+                      resolve(false);            
+                    });            
+                });            
               }
             
               logout() {
@@ -79,10 +61,8 @@ export class AuthenticationService {
                           this.token = null;
                           this.storage.clear();
                           resolve(false);
-                        }
-            
-                      });
-            
+                        }            
+                      });          
             
                 });
             
