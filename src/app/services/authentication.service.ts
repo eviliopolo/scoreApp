@@ -42,7 +42,7 @@ export class AuthenticationService {
                       console.log(resp);
             
                       if ( resp['Response'] ) {
-                        await this.guardarToken('Barrer Metal MD105');
+                        await this.guardarToken(resp['Message']);
                         resolve(true);
                       } else {
                         this.token = null;
@@ -73,7 +73,7 @@ export class AuthenticationService {
                         console.log(resp);
             
                         if ( resp['Response'] ) {
-                          await this.guardarToken('Barrer Metal MD105');
+                          await this.guardarToken(resp['Message']);
                           resolve(true);
                         } else {
                           this.token = null;
