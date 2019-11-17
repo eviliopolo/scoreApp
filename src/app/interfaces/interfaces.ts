@@ -58,6 +58,23 @@ export interface MicroContent {
   MContentUsers: any[];
 }
 
+export interface RootUsuario {
+  Result: UsuarioEstudiante;
+  Response: boolean;
+  Message: string;
+  Function?: any;
+  Href?: any;
+  Validations?: any;
+}
+
+export interface UsuarioEstudiante {
+  Id?:string;
+  Email?: string;
+  LastName?: string;
+  FirstName?: any;
+  FullName?: any;
+}
+
 
 
 

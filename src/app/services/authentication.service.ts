@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { environment } from '../../environments/environment';
-import { Usuario } from '../interfaces/interfaces';
+import { Usuario, UsuarioEstudiante, RootUsuario } from '../interfaces/interfaces';
 import { NavController } from '@ionic/angular';
 
 const URL = environment.url;
@@ -100,8 +100,7 @@ export class AuthenticationService {
               async validaToken(): Promise<boolean> {
             
                 await this.cargarToken();
-                //codigo quemado                
-                return Promise.resolve(true);
+  
 
             
                 if ( !this.token ) {
@@ -111,16 +110,13 @@ export class AuthenticationService {
             
             
                 return new Promise<boolean>( resolve => {
-            
-                  const headers = new HttpHeaders({
-                    'x-token': this.token
-                  });
-            
-                  this.http.get(`${ URL }/user/`, { headers })
+                  this.http.get<RootUsuario>(`${ URL }/api/score/user/?token_x=${ this.token }`)
                     .subscribe( resp => {
             
-                      if ( resp['ok'] ) {
-                        this.usuario = resp['usuario'];
+                      if ( resp.Response ) {
+                        console.log('Resultado',resp['Result']);
+                        this.usuario.email = resp.Result.Email;
+                        this.usuario.nombre = resp.Result.LastName;
                         resolve(true);
                       } else {
                         this.navCtrl.navigateRoot('/login');
