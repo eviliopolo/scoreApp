@@ -26,6 +26,7 @@ export class MiperfilPage implements OnInit {
     if ( fActualizar.invalid ) { return; }
 
     const actualizado = await this.usuarioService.actualizarUsuario( this.usuario );
+    console.log (actualizado);
     if ( actualizado ) {
       // toast con el mensaje de actualizado
       this.uiService.presentToast( 'Registro actualizado' );

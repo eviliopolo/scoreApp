@@ -100,7 +100,8 @@ export class AuthenticationService {
               async validaToken(): Promise<boolean> {
             
                 await this.cargarToken();
-  
+                
+                
 
             
                 if ( !this.token ) {
@@ -112,9 +113,12 @@ export class AuthenticationService {
                 return new Promise<boolean>( resolve => {
                   this.http.get<RootUsuario>(`${ URL }/api/score/user/?token_x=${ this.token }`)
                     .subscribe( resp => {
+                      console.log('RESPONSE', resp);
             
-                      if ( resp.Response ) {
-                        console.log('Resultado',resp['Result']);
+                      if ( resp.Response ) {    
+                        if (!this.usuario)
+                          this.usuario = {};
+
                         this.usuario.email = resp.Result.Email;
                         this.usuario.nombre = resp.Result.LastName;
                         resolve(true);
@@ -132,18 +136,14 @@ export class AuthenticationService {
             
             
               actualizarUsuario( usuario: Usuario ) {                        
-                const headers = new HttpHeaders({
-                  'x-token': this.token
-                });
-            
-            
+                          
                 return new Promise( resolve => {
             
-                  this.http.post(`${ URL }/user/update`, usuario, { headers })
+                  this.http.get(`${ URL }/api/score/updateuser?LastName=${ usuario.nombre }&Token=${ this.token }`)
                     .subscribe( resp => {
             
-                      if ( resp['ok'] ) {
-                        this.guardarToken( resp['token'] );
+                      if ( resp['Response'] ) {
+                        this.guardarToken( this.token );
                         resolve(true);
                       } else {
                         resolve(false);
