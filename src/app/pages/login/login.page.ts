@@ -24,7 +24,10 @@ export class LoginPage implements OnInit {
     email: 'test',
     password: '123456',
     nombre: 'Test',
-    avatar: 'av-1.png'
+    apellido: 'Test',
+    usuario:'Test',
+    avatar: 'av-1.png',
+
   };
 
 

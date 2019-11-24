@@ -48,6 +48,11 @@
               </ion-button>
             </ion-col>
           </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-label color="dark">Al iniciar sesion, aceptas la politica de privacidad y los terminos de uso de SCORE</ion-label><br />
+            </ion-col>
+          </ion-row>
 
         </ion-grid>
       </form>
@@ -79,6 +84,22 @@
                             </ion-item>
 
                             <ion-item>
+                            <ion-label>Password</ion-label>
+                            <ion-input name="password"
+                                        type="password"
+                                        [(ngModel)]="registerUser.password"
+                                        required></ion-input>
+                            </ion-item>
+
+                            <ion-item>
+                            <ion-label>Repetir password</ion-label>
+                            <ion-input name="Confirmarpassword"
+                                        type="password"
+                                        [(ngModel)]="registerUser.password"
+                                        required></ion-input>
+                            </ion-item>
+
+                            <ion-item>
                             <ion-label>Nombre</ion-label>
                             <ion-input name="nombre"
                                         type="text"
@@ -87,12 +108,39 @@
                             </ion-item>
 
                             <ion-item>
-                            <ion-label>Password</ion-label>
-                            <ion-input name="password"
-                                        type="password"
-                                        [(ngModel)]="registerUser.password"
+                            <ion-label>Apellido</ion-label>
+                            <ion-input name="apellido"
+                                        type="text"
+                                        [(ngModel)]="registerUser.apellido"
                                         required></ion-input>
                             </ion-item>
+
+                            <ion-item>
+                              <ion-label>Usuario</ion-label>
+                              <ion-input name="usuario"
+                                          type="text"
+                                          [(ngModel)]="registerUser.usuario"
+                                          required></ion-input>
+                              </ion-item>
+
+                              <ion-item>
+                                  <ion-label>Registrate para recibir correos electronicos y conocer las ultimas novedades de SCORE</ion-label>
+                                <ion-checkbox color="primary"></ion-checkbox>                              
+                              </ion-item>
+
+                              <ion-item>
+                                  <ion-label>Al crear una cuenta, aceptas la politica de privacidad y los terminos de uso de SCORE</ion-label>
+                                <ion-checkbox color="primary"></ion-checkbox>                              
+                              </ion-item>
+
+                              
+
+                             
+
+                              
+
+                            
+                            
 
                         </ion-list>
                     </ion-col>

@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { UsuarioGuard } from './guards/usuario.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'banner', pathMatch: 'full' },
   { path: 'inicio', loadChildren: './pages/inicio/inicio.module#InicioPageModule',canLoad: [ UsuarioGuard ] },
   { path: 'alerts', loadChildren: './pages/alerts/alerts.module#AlertsPageModule',canLoad: [ UsuarioGuard ] },
   { path: 'miperfil', loadChildren: './pages/miperfil/miperfil.module#MiperfilPageModule',canLoad: [ UsuarioGuard ] },
@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'preguntas', loadChildren: './pages/preguntas/preguntas.module#PreguntasPageModule',canLoad: [ UsuarioGuard ] },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
+  { path: 'banner', loadChildren: './pages/banner/banner.module#BannerPageModule' },
+
 
 
 ];

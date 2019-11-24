@@ -8,8 +8,11 @@ export interface Componente {
     avatar?: string;
     _id?: string;
     nombre?: string;
+    apellido?: string;
+    usuario?: string;
     email?: string;
     password?: string;
+
   }
 
 export interface MicroContentRoot {
