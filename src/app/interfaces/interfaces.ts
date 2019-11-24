@@ -73,9 +73,10 @@ export interface RootUsuario {
 export interface UsuarioEstudiante {
   Id?:string;
   Email?: string;
+  UserName?: string;
+  FirstName?: string;
   LastName?: string;
-  FirstName?: any;
-  FullName?: any;
+  Avatar?: string;
 }
 
 

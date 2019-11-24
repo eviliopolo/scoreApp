@@ -34,17 +34,35 @@
                     <ion-label>Email</ion-label>
                     <ion-input name="email"
                                type="email"
+                               disabled
                                [(ngModel)]="usuario.email"
                                required></ion-input>
                   </ion-item>
     
                   <ion-item>
-                    <ion-label>Nombre</ion-label>
-                    <ion-input name="nombre"
+                    <ion-label>Usuario</ion-label>
+                    <ion-input name="usuario"
+                               disabled
                                type="text"
-                               [(ngModel)]="usuario.nombre"
+                               [(ngModel)]="usuario.usuario"
                                required></ion-input>
                   </ion-item>
+
+                  <ion-item>
+                      <ion-label>Nombre</ion-label>
+                      <ion-input name="nombre"
+                                 type="text"
+                                 [(ngModel)]="usuario.nombre"
+                                 required></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Apellido</ion-label>
+                        <ion-input name="apellido"
+                                   type="text"
+                                   [(ngModel)]="usuario.apellido"
+                                   required></ion-input>
+                      </ion-item>
     
     
                 </ion-list>
@@ -59,6 +77,7 @@
               Actualizar
             </ion-button>
           </ion-col>
+         
         </ion-row>
         
       </form>

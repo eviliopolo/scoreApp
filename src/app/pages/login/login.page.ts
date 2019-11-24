@@ -60,7 +60,8 @@ export class LoginPage implements OnInit {
 
     if ( fRegistro.invalid ) { return; }
 
-    const valido = await this.usuarioService.registro( this.registerUser.email,this.registerUser.password );
+    const valido = await this.usuarioService.registro( this.registerUser.email,this.registerUser.password,
+              this.registerUser.usuario, this.registerUser.nombre, this.registerUser.apellido, this.registerUser.avatar );
 
     if ( valido ) {
       // navegar al tabs
@@ -84,6 +85,10 @@ export class LoginPage implements OnInit {
     this.slides.lockSwipes(false);
     this.slides.slideTo(1);
     this.slides.lockSwipes(true);
+  }
+  VerTerminosCondiciones()
+  {
+    this.navCtrl.navigateRoot( '/terminoscondiciones', { animated: true } );
   }
 
 }

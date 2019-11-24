@@ -22,21 +22,13 @@
    
     {
       "icon": "appstore",
-      "name": "Contenidos",
+      "name": "Juegos",
       "redirectTo": "/contenidos"
     },
-   
-   
     {
-      "icon": "card",
-      "name": "Micro Contenidos",
-      "redirectTo": "/microcontenidos"
-    },
-    
-    {
-      "icon": "hammer",
-      "name": "Preguntas",
-      "redirectTo": "/preguntas"
-    }    
+      "icon": "key",
+      "name": "Cambiar contraseña",
+      "redirectTo": "/changepassword"
+    }      
   ]
   

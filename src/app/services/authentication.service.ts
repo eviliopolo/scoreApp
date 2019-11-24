@@ -46,8 +46,8 @@ export class AuthenticationService {
                 this.navCtrl.navigateRoot('/login', { animated: true });
               }
             
-              registro( email: string, password: string  ) {
-                const data = { email, password,ConfirmPassword:password };
+              registro( email: string, password: string, userName: string,firstName:string, lastName:string, avatar:string  ) {
+                const data = { email, password,ConfirmPassword:password, userName,firstName, lastName, avatar };
                 return new Promise( resolve => {
             
                   this.http.post(`${ URL }/api/score/register`, data )
@@ -120,7 +120,10 @@ export class AuthenticationService {
                           this.usuario = {};
 
                         this.usuario.email = resp.Result.Email;
-                        this.usuario.nombre = resp.Result.LastName;
+                        this.usuario.usuario = resp.Result.UserName;
+                        this.usuario.nombre = resp.Result.FirstName;
+                        this.usuario.apellido = resp.Result.LastName;
+                        this.usuario.avatar = resp.Result.Avatar;
                         resolve(true);
                       } else {
                         this.navCtrl.navigateRoot('/login');
@@ -139,7 +142,7 @@ export class AuthenticationService {
                           
                 return new Promise( resolve => {
             
-                  this.http.get(`${ URL }/api/score/updateuser?LastName=${ usuario.nombre }&Token=${ this.token }`)
+                  this.http.get(`${ URL }/api/score/updateuser?LastName=${ usuario.apellido }&FirstName=${ usuario.nombre }&Avatar=${ usuario.avatar }&Token=${ this.token }`)
                     .subscribe( resp => {
             
                       if ( resp['Response'] ) {

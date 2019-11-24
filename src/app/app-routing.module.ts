@@ -16,6 +16,9 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
   { path: 'banner', loadChildren: './pages/banner/banner.module#BannerPageModule' },
+  { path: 'terminoscondiciones', loadChildren: './pages/terminoscondiciones/terminoscondiciones.module#TerminoscondicionesPageModule' },
+  { path: 'changepassword', loadChildren: './pages/changepassword/changepassword.module#ChangepasswordPageModule',canLoad: [ UsuarioGuard ]  },
+
 
 
 

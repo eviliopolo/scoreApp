@@ -80,6 +80,7 @@
                             <ion-input name="email" 
                                         type="email"
                                         [(ngModel)]="registerUser.email"
+                                        placeholder="Email"
                                         required></ion-input>
                             </ion-item>
 
@@ -88,14 +89,16 @@
                             <ion-input name="password"
                                         type="password"
                                         [(ngModel)]="registerUser.password"
+                                        placeholder="Password"
                                         required></ion-input>
                             </ion-item>
 
                             <ion-item>
-                            <ion-label>Repetir password</ion-label>
+                            <ion-label>Confirmar password</ion-label>
                             <ion-input name="Confirmarpassword"
                                         type="password"
                                         [(ngModel)]="registerUser.password"
+                                        placeholder="Confirmar Password"
                                         required></ion-input>
                             </ion-item>
 
@@ -130,8 +133,11 @@
 
                               <ion-item>
                                   <ion-label>Al crear una cuenta, aceptas la politica de privacidad y los terminos de uso de SCORE</ion-label>
-                                <ion-checkbox color="primary"></ion-checkbox>                              
+                                  <ion-checkbox color="primary"></ion-checkbox>                              
                               </ion-item>
+
+                              <span class="text-primary" (click)="VerTerminosCondiciones()"> Ver Terminos y condiciones </span>
+                              
 
                               
 
