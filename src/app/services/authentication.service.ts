@@ -68,6 +68,26 @@ export class AuthenticationService {
             
             
               }
+
+              changePassword( OldPassword:string, NewPassword: string, ConfirmPassword: string) {
+                const data = { UserId:this.token, OldPassword,NewPassword, ConfirmPassword};
+                return new Promise( resolve => {
+            
+                  this.http.post(`${ URL }/api/score/changepassword`, data )
+                      .subscribe( async resp => {
+                        console.log(resp);
+            
+                        if ( resp['Response'] ) {                          
+                          resolve(true);
+                        } else {                          
+                          resolve(false);
+                        }            
+                      });          
+            
+                });
+            
+            
+              }
             
               getUsuario() {
             

@@ -12,6 +12,8 @@ export interface Componente {
     usuario?: string;
     email?: string;
     password?: string;
+    currentpassword?:string;
+    confirmpassword?:string;
 
   }
 
