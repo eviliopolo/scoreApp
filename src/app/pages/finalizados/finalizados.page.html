@@ -19,11 +19,9 @@
           <ion-card>
               <ion-card-header>
                   <ion-card-subtitle>                    
-                    <span class="text-primary">{{ mc.Title}}</span>              
-                   
-              
+                    <span class="text-primary" [innerHTML]="mc.Title"></span>                                              
                   </ion-card-subtitle>
-                  <ion-card-title class="text-primary">{{ mc.Title }} </ion-card-title>
+                  <ion-card-title class="text-primary" [innerHTML]="mc.Name"></ion-card-title>
                 </ion-card-header>
 
 

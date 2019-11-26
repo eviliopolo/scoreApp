@@ -20,7 +20,7 @@ export interface Componente {
 export interface MicroContentRoot {
     MicroContent: MicroContent;
     MicroContent_Id: number;
-    Name?: any;
+    Name?: string;
     Title: string;
     Content?: any;
     Image?: any;
