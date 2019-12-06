@@ -1,44 +1,44 @@
 export interface Componente {
-    icon: string;
-    name: string;
-    redirectTo: string;
-  }
+  icon: string;
+  name: string;
+  redirectTo: string;
+}
 
-  export interface Usuario {
-    avatar?: string;
-    _id?: string;
-    nombre?: string;
-    apellido?: string;
-    usuario?: string;
-    email?: string;
-    password?: string;
-    currentpassword?:string;
-    confirmpassword?:string;
+export interface Usuario {
+  avatar?: string;
+  _id?: string;
+  nombre?: string;
+  apellido?: string;
+  usuario?: string;
+  email?: string;
+  password?: string;
+  currentpassword?: string;
+  confirmpassword?: string;
 
-  }
+}
 
 export interface MicroContentRoot {
-    MicroContent: MicroContent;
-    MicroContent_Id: number;
-    Name?: string;
-    Title: string;
-    Content?: any;
-    Image?: any;
-    DateStart: string;
-    DateClosed: string;
-    PointsApproval: number;
-    PointsTotals: number;
-    Groups_Ids?: any;
-    Groups: any[];
-    Users_Ids?: any;
-    Users: any[];
-    Categories_Ids?: any;
-    Categories: any[];
-    DateCreated?: any;
-    UserCreated?: any;
-    DateModified?: any;
-    UserModified?: any;
-  }
+  MicroContent: MicroContent;
+  MicroContent_Id: number;
+  Name?: string;
+  Title: string;
+  Content?: any;
+  Image?: any;
+  DateStart: string;
+  DateClosed: string;
+  PointsApproval: number;
+  PointsTotals: number;
+  Groups_Ids?: any;
+  Groups: any[];
+  Users_Ids?: any;
+  Users: any[];
+  Categories_Ids?: any;
+  Categories: any[];
+  DateCreated?: any;
+  UserCreated?: any;
+  DateModified?: any;
+  UserModified?: any;
+}
 
 
 export interface MicroContent {
@@ -73,7 +73,7 @@ export interface RootUsuario {
 }
 
 export interface UsuarioEstudiante {
-  Id?:string;
+  Id?: string;
   Email?: string;
   UserName?: string;
   FirstName?: string;
@@ -82,11 +82,30 @@ export interface UsuarioEstudiante {
 }
 
 
+export interface MicroContentMobile {
+  id: number;
+  name: string;
+  image?: string;
+  points?: number;
+}
+
+export interface ContentManager {
+  id: number;
+  name: string;
+}
+
+export interface objectLearningMobile {
+  id: number;
+  name: string;
+  title: string;
+  points: number;
+}
 
 
 
 
-  
 
 
-  
+
+
+

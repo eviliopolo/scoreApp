@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MicrocontentsService } from 'src/app/services/microcontents.service';
+import { MicroContentMobile } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-activos',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./activos.page.scss'],
 })
 export class ActivosPage implements OnInit {
-
-  constructor() { }
+  microcontenidosActivos: MicroContentMobile[] = [];
+  constructor(private microcontentServ : MicrocontentsService) { }
 
   ngOnInit() {
+    this.microcontentServ.getMicroContentActive()
+    .subscribe(resp => {
+        console.log('Resp',resp);
+        this.microcontenidosActivos = resp;
+    });
   }
 
 }
