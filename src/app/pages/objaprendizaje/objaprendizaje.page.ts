@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { objectLearningMobile } from 'src/app/interfaces/interfaces';
 import { MicrocontentsService } from 'src/app/services/microcontents.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IonSegment } from '@ionic/angular';
 
 @Component({
   selector: 'app-objaprendizaje',
@@ -9,8 +10,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./objaprendizaje.page.scss'],
 })
 export class ObjaprendizajePage implements OnInit {
+  @ViewChild(IonSegment, {static: true}) segment: IonSegment;
+
   data: number;
   objetosaprendizajes: objectLearningMobile[] = [];
+  objaprendizaje: objectLearningMobile;
   constructor(private microcontentServ : MicrocontentsService
               ,private route: ActivatedRoute
               , private router: Router) { 
@@ -24,11 +28,28 @@ export class ObjaprendizajePage implements OnInit {
   }
 
   ngOnInit() {
+    
     this.microcontentServ.getObjectLearning()
     .subscribe(resp => {
         console.log('Resp',resp);
         this.objetosaprendizajes = resp;
+        this.segment.value = this.objetosaprendizajes[0].name;
+        this.objaprendizaje = this.objetosaprendizajes[0];
     });
+
+  }
+
+  cambioCategoria( event ) {
+    //objaprendizaje 
+    console.log(event.detail.value);
+    this.cargarObjetoAprendizaje(event.detail.value);
+
+  }
+
+  cargarObjetoAprendizaje( aprendizaje: string ) {
+    this.objaprendizaje =this.objetosaprendizajes.filter(x => x.name ==aprendizaje)[0];
+    console.log('objetoAprendizaje',this.objaprendizaje);
+    
   }
 
 }

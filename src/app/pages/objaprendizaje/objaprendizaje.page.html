@@ -1,4 +1,4 @@
-<app-header title="Finalizados">
+<app-header title="Aprendizaje">
 
 </app-header>
 
@@ -10,31 +10,51 @@
         <h3>Mis objetos de aprendizaje</h3>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+        <ion-col>
+            <ion-segment scrollable 
+                mode="md" 
+                color="primary"
+                (ionChange)="cambioCategoria( $event )">                
+              <ion-segment-button mode="md"
+                        *ngFor="let mc of objetosaprendizajes"
+                        [value]="mc.name">
+              <ion-label text-capitalize>{{ mc.name }}</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+      </ion-row>
+    
+    
   </ion-grid>
+
+    
+  
 
   
 
       
         
-        <ion-card *ngFor="let mc of objetosaprendizajes">
+        <ion-card *ngIf="objaprendizaje">
             <ion-card-header>
                 <ion-card-subtitle>                    
-                  <span class="text-primary" [innerHTML]="mc.name"></span>                                              
+                  <span class="text-primary" [innerHTML]="objaprendizaje.name"></span>                                              
                 </ion-card-subtitle>
-                <ion-card-title class="text-primary" [innerHTML]="mc.title"></ion-card-title>
+                <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title"></ion-card-title>
               </ion-card-header>
 
 
 
 
-          <img [src]="mc.Image | imagen">
+          <img [src]="objaprendizaje.Image | imagen">
 
           <ion-card-content>
-              <p [innerHTML]="mc.content">
+              <p [innerHTML]="objaprendizaje.content">
                 
               </p>
               <p><span>Puntaje</span> 
-                  {{ mc.name }}
+                  {{ objaprendizaje.name }}
                 </p>
             </ion-card-content>
         </ion-card>
