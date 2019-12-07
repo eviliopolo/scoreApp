@@ -16,7 +16,7 @@
 
       
         
-        <ion-card *ngFor="let mc of gestorcontenidos">
+        <ion-card *ngFor="let mc of gestorcontenidos" (click)="verobjetosAprendizaje(mc.id)">
             <ion-card-header>
                 <ion-card-subtitle>                    
                   <span class="text-primary" [innerHTML]="mc.name"></span>                                              

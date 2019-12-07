@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MicrocontentsService } from 'src/app/services/microcontents.service';
 import { MicroContentMobile } from 'src/app/interfaces/interfaces';
 
+
+import { Router, NavigationExtras } from '@angular/router';
+
 @Component({
   selector: 'app-activos',
   templateUrl: './activos.page.html',
@@ -9,7 +12,7 @@ import { MicroContentMobile } from 'src/app/interfaces/interfaces';
 })
 export class ActivosPage implements OnInit {
   microcontenidosActivos: MicroContentMobile[] = [];
-  constructor(private microcontentServ : MicrocontentsService) { }
+  constructor(private microcontentServ : MicrocontentsService, private router: Router) { }
 
   ngOnInit() {
     this.microcontentServ.getMicroContentActive()
@@ -17,6 +20,17 @@ export class ActivosPage implements OnInit {
         console.log('Resp',resp);
         this.microcontenidosActivos = resp;
     });
+  }
+
+  vergestorcontenido( id: string){
+    console.log(id);
+
+    let navigationExtras: NavigationExtras = {
+      state: {
+        idGestorContenido: id
+      }      
+    };
+    this.router.navigate(['gestorcontenido'], navigationExtras);    
   }
 
 }

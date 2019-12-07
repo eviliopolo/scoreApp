@@ -16,7 +16,7 @@
 
       
         
-        <ion-card *ngFor="let mc of microcontenidosActivos">
+        <ion-card *ngFor="let mc of microcontenidosActivos" (click)="vergestorcontenido(mc.id)">
             <ion-card-header>
                 <ion-card-subtitle>                    
                   <span class="text-primary" [innerHTML]="mc.name"></span>                                              
