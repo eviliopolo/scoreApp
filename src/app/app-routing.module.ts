@@ -17,7 +17,9 @@ const routes: Routes = [
   { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
   { path: 'banner', loadChildren: './pages/banner/banner.module#BannerPageModule' },
   { path: 'terminoscondiciones', loadChildren: './pages/terminoscondiciones/terminoscondiciones.module#TerminoscondicionesPageModule' },
-  { path: 'changepassword', loadChildren: './pages/changepassword/changepassword.module#ChangepasswordPageModule',canLoad: [ UsuarioGuard ]  },
+  { path: 'changepassword', loadChildren: './pages/changepassword/changepassword.module#ChangepasswordPageModule',canLoad: [ UsuarioGuard ]  },  { path: 'gestorcontenido', loadChildren: './pages/gestorcontenido/gestorcontenido.module#GestorcontenidoPageModule' },
+  { path: 'objaprendizaje', loadChildren: './pages/objaprendizaje/objaprendizaje.module#ObjaprendizajePageModule' },
+
 
 
 

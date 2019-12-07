@@ -99,6 +99,8 @@ export interface objectLearningMobile {
   name: string;
   title: string;
   points: number;
+  contenttype:number;
+  content:string;
 }
 
 
