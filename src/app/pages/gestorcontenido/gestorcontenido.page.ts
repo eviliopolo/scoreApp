@@ -26,7 +26,7 @@ export class GestorcontenidoPage implements OnInit {
 
   ngOnInit() {
     console.log('Parametro gestor contenido', this.data);
-    this.microcontentServ.getcontentmanager()
+    this.microcontentServ.getcontentmanager(this.data)
     .subscribe(resp => {
         console.log('Resp',resp);
         this.gestorcontenidos = resp;

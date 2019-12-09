@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MicrocontentsService } from 'src/app/services/microcontents.service';
 
 @Component({
   selector: 'app-mispuntos',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MispuntosPage implements OnInit {
 
-  constructor() { }
+  misPuntos: number;
+  constructor(private microcontentServ : MicrocontentsService) { }
 
   ngOnInit() {
+    this.microcontentServ.getPoints()
+    .subscribe(resp => {
+        console.log('Resp',resp);
+        this.misPuntos = resp;
+    });
   }
 
 }

@@ -115,6 +115,11 @@ export class AuthenticationService {
                 this.token = await this.storage.get('token') || null;
             
               }
+
+              getCurrentUser(){                                      
+                return this.usuario._id;            
+              }
+
             
             
               async validaToken(): Promise<boolean> {

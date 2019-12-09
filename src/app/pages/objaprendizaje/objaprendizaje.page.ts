@@ -29,7 +29,7 @@ export class ObjaprendizajePage implements OnInit {
 
   ngOnInit() {
     
-    this.microcontentServ.getObjectLearning()
+    this.microcontentServ.getObjectLearning(this.data)
     .subscribe(resp => {
         console.log('Resp',resp);
         this.objetosaprendizajes = resp;
