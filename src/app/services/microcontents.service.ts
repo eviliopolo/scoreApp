@@ -15,7 +15,7 @@ export class MicrocontentsService {
   constructor(private http: HttpClient, private usuarioService: AuthenticationService) {
     this.currentUser = this.usuarioService.getCurrentUser();
     ///TODO
-    this.currentUser ='20951f64-6012-4cbe-ae09-473ac1efad65';
+    ///this.currentUser ='20951f64-6012-4cbe-ae09-473ac1efad65';
    }
 
   getMicroContentInactive (){        
@@ -29,18 +29,18 @@ export class MicrocontentsService {
 
   getcontentmanager(idMicroContente: number){
     ///TODO
-    idMicroContente = 72;
+    //idMicroContente = 72;
     return this.http.get<ContentManager[]>(`${ URL }/api/score/contentmanager?microContentId=${ idMicroContente }`);
   }
 
   getObjectLearning(idCategory: number){
     ///TODO
-    idCategory = 3;
+    //idCategory = 3;
     return this.http.get<objectLearningMobile[]>(`${ URL }/api/score/objectlearning?id=${ this.currentUser }&categoryId=${ idCategory }`);
   }
 
   getPoints(){    
-    return this.http.get<number>(`${ URL }/api/score/getPoints?id=1&user=${ this.currentUser }`);
+    return this.http.get<number>(`${ URL }/api/score/getPoints?user=${ this.currentUser }`);
   }
 
 

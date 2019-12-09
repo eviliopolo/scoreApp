@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImagenPipe } from './imagen.pipe';
+import { NoSanitizePipe } from './no-sanitize.pipe';
 
 
 
 @NgModule({
   declarations: [
-    ImagenPipe
+    ImagenPipe,
+    NoSanitizePipe
   ],
   exports:[
-    ImagenPipe
+    ImagenPipe,
+    NoSanitizePipe,
   ],
   imports: [
     CommonModule
