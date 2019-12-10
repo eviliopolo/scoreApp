@@ -116,8 +116,9 @@ export class AuthenticationService {
             
               }
 
-              getCurrentUser(){                                      
-                return this.usuario._id;            
+              getCurrentUser(){    
+                console.log('IdUsuario',this.token)                                  
+                return this.token;            
               }
 
             
