@@ -110,10 +110,8 @@ export class AuthenticationService {
             
               }
             
-              async cargarToken() {
-            
-                this.token = await this.storage.get('token') || null;
-            
+              async cargarToken() {            
+                this.token = await this.storage.get('token') || null;            
               }
 
               getCurrentUser(){    

@@ -1,0 +1,34 @@
+[
+    {
+        "icon": "contacts",
+        "name": "Mi perfil",
+        "redirectTo": "/miperfil"
+    },
+    {
+        "icon": "car",
+        "name": "Activos",
+        "redirectTo": "/activos"
+    },
+    {
+        "icon": "checkmark-circle-outline",
+        "name": "Finalizados",
+        "redirectTo": "/finalizados"
+    },
+    {
+        "icon": "radio-button-on",
+        "name": "Mis puntos",
+        "redirectTo": "/mispuntos"
+    },   
+   
+    {
+      "icon": "appstore",
+      "name": "Juegos",
+      "redirectTo": "/contenidos"
+    },
+    {
+      "icon": "key",
+      "name": "Cambiar contraseña",
+      "redirectTo": "/changepassword"
+    }      
+  ]
+  

@@ -14,8 +14,6 @@ export class MicrocontentsService {
   currentUser: string;
   constructor(private http: HttpClient, private usuarioService: AuthenticationService) {
     this.currentUser = this.usuarioService.getCurrentUser();
-    ///TODO
-    ///this.currentUser ='20951f64-6012-4cbe-ae09-473ac1efad65';
    }
 
   getMicroContentInactive (){        
@@ -23,7 +21,6 @@ export class MicrocontentsService {
   }
 
   getMicroContentActive (){
-    const data ='20951f64-6012-4cbe-ae09-473ac1efad65';
     return this.http.get<MicroContentMobile[]>(`${ URL }/api/score/microcontentactive?id=${ this.currentUser }`);
   }
 

@@ -1,5 +1,7 @@
 {
   "name": "scoreApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

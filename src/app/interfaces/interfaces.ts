@@ -101,6 +101,7 @@ export interface objectLearningMobile {
   points: number;
   contenttype:number;
   content:string;
+  Image:string;
 }
 
 
