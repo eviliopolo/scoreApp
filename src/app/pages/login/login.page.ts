@@ -21,11 +21,11 @@ export class LoginPage implements OnInit {
   };
 
   registerUser: Usuario = {
-    email: 'test',
-    password: '123456',
-    nombre: 'Test',
-    apellido: 'Test',
-    usuario:'Test',
+    email: '',
+    password: '',
+    nombre: '',
+    apellido: '',
+    usuario:'',
     avatar: 'av-1.png',
 
   };

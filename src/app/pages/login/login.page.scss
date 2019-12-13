@@ -16,3 +16,28 @@ img {
     transition: opacity 0.5s linear;
     opacity: 1 !important;
 }
+
+ion-slide{
+    background: url('src/assets/img/Fondo.png');
+}
+
+ion-label{
+    color:white;
+}
+
+ion-item{
+    color:black;
+    
+}
+
+.input-wrapper{
+    background-color: transparent !important;
+}
+
+.item-native{
+    background-color: transparent !important;
+}
+
+ion-list{
+    background-color: transparent;
+}

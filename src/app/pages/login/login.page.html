@@ -1,8 +1,5 @@
 <ion-content>
-
-
   <ion-slides class="mainSlide" #slidePrincipal>
-    
     <ion-slide>
 
       <form (ngSubmit)="login( fLogin )" #fLogin="ngForm">
@@ -13,28 +10,28 @@
               <img src="/assets/InicioAppScore.jpg">
             </ion-col>
           </ion-row>
-        
-          <ion-row>
+          <ion-row style="background: transparent;">
             <ion-col>
-              
-                <ion-list>
+                <ion-list style="background: transparent;">
                   
-                  <ion-item>
-                    <ion-label>Email</ion-label>
+                  <ion-item style="background: transparent;"> 
+                    <ion-label>Correo </ion-label>
                     <ion-input name="email"
                                 type="email"
                                 [(ngModel)]="loginUser.email"
-                                required></ion-input>
+                                class="item-native"
+                                required 
+                                >
+                    </ion-input>
                   </ion-item>
-
                   <ion-item>
-                    <ion-label>Password</ion-label>
+                    <ion-label>Contraseña</ion-label>
                     <ion-input name="password"
                                 type="password"
                                 [(ngModel)]="loginUser.password"
+                                class="item-native"
                                 required></ion-input>
                   </ion-item>
-
                 </ion-list>
             </ion-col>
           </ion-row>
@@ -44,26 +41,20 @@
               <ion-button type="submit"
                           color="tertiary"
                           shape="round">
-                Login
+                Ingresar
               </ion-button>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-label color="dark">Al iniciar sesion, aceptas la politica de privacidad y los terminos de uso de SCORE</ion-label><br />
+              <ion-label>Al iniciar sesion, aceptas la politica de privacidad y los terminos de uso de SCORE</ion-label><br />
             </ion-col>
           </ion-row>
 
         </ion-grid>
       </form>
-    
-
-
     </ion-slide>
-
     <ion-slide>
-
-      
       <ion-grid fixed>
 
             <!-- Avatar Selector -->

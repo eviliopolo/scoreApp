@@ -10,25 +10,53 @@
       </ion-buttons>
   
   
-      <ion-title color="primary">Opciones</ion-title>
+      <ion-title color="primary">Tablero</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content>
   
-  
-    <ion-list>
-  
-      <ion-item *ngFor="let c of componentes | async"
-                [routerLink]="c.redirectTo" detail>
-          <ion-icon slot="start" 
-                    [name]="c.icon"
-                    color="primary">
-          </ion-icon>
-          <ion-label>{{ c.name }}</ion-label>
-      </ion-item>
-  
-    </ion-list>
-  
-  
+    <ion-card href="/activos" class="activated">
+      <ion-card-header>        
+        <ion-card-subtitle>--</ion-card-subtitle>
+        <ion-card-title>Activos</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-badge color="success">1</ion-badge>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card href="/finalizados" class="activated">
+      <ion-card-header>        
+        <ion-card-subtitle>--</ion-card-subtitle>
+        <ion-card-title>Finalizados</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-badge color="danger">1</ion-badge>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card href="/mispuntos" class="activated">
+      <ion-card-header>        
+        <ion-card-subtitle>--</ion-card-subtitle>
+        <ion-card-title>Mis puntos</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-badge color="primary">1</ion-badge>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card href="/contenidos" class="activated">
+      <ion-card-header>        
+        <ion-card-subtitle>--</ion-card-subtitle>
+        <ion-card-title>Juegos</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-badge color="dark">1</ion-badge>
+      </ion-card-content>
+    </ion-card>
   </ion-content>
