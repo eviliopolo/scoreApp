@@ -37,14 +37,14 @@
       
         
         <ion-card *ngIf="objaprendizaje">
-          <!--
+          
             <ion-card-header>
                 <ion-card-subtitle>                    
                   <span class="text-primary" [innerHTML]="objaprendizaje.name "></span>                                              
                 </ion-card-subtitle>
                 <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title"></ion-card-title>
               </ion-card-header>
-            -->
+            
 
 
 
@@ -52,7 +52,7 @@
 
           <ion-card-content>
               <div [innerHTML]="objaprendizaje.content | noSanitize"></div>
-                  {{objaprendizaje.content}} 
+
               <p><span>Puntaje</span> 
                   {{ objaprendizaje.points }}
                 </p>
