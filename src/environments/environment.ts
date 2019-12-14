@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  //url: 'https://www.aprendeyavanza2.com.co:9092'
   url: 'https://localhost:44322'
 };
 

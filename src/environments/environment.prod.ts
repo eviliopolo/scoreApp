@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://localhost:44322'
+  url: 'https://www.aprendeyavanza2.com.co:9092'
 };

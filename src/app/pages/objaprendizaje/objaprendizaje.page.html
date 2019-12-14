@@ -37,24 +37,22 @@
       
         
         <ion-card *ngIf="objaprendizaje">
+          <!--
             <ion-card-header>
                 <ion-card-subtitle>                    
-                  <span class="text-primary" [innerHTML]="objaprendizaje.name | noSanitize"></span>                                              
+                  <span class="text-primary" [innerHTML]="objaprendizaje.name "></span>                                              
                 </ion-card-subtitle>
-                <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title | noSanitize"></ion-card-title>
+                <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title"></ion-card-title>
               </ion-card-header>
+            -->
 
 
 
-
-          <img [src]="objaprendizaje.Image | imagen">
+          <!--<img [src]="objaprendizaje.Image | imagen">-->
 
           <ion-card-content>
-              <div [innerHTML]="objaprendizaje.content | noSanitize"></div>
-
-                  <div> {{objaprendizaje.content | noSanitize}} </div>
-                
-              
+              <div [innerHTML]="objaprendizaje.content | youtube"></div>
+                  {{objaprendizaje.content | youtube}} 
               <p><span>Puntaje</span> 
                   {{ objaprendizaje.points }}
                 </p>

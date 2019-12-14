@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { environment } from '../../environments/environment';
 import { Usuario, UsuarioEstudiante, RootUsuario } from '../interfaces/interfaces';
 import { NavController } from '@ionic/angular';
+import { UiServiceService } from './ui-service.service';
 
 const URL = environment.url;
 
@@ -16,15 +17,17 @@ export class AuthenticationService {
   private usuario: Usuario = {};
   constructor(private http: HttpClient,
               private storage: Storage,
-              private navCtrl: NavController ) {}
+              private navCtrl: NavController) {}
 
               login( email: string, password: string ) {
+                
+
                 const data = { email, password };            
                 return new Promise( resolve => {              
             
                   this.http.post(`${ URL }/api/score/login`, data )
                     .subscribe( async resp => {
-                      console.log(resp);
+                      console.log(resp);                     
             
                       if ( resp['Response'] ) {
                         await this.guardarToken(resp['Message']);
