@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImagenPipe } from './imagen.pipe';
 import { NoSanitizePipe } from './no-sanitize.pipe';
-import { YoutubePipe } from './youtube.pipe';
+
 
 
 
@@ -10,12 +10,10 @@ import { YoutubePipe } from './youtube.pipe';
   declarations: [
     ImagenPipe,
     NoSanitizePipe,
-    YoutubePipe,
   ],
   exports:[
     ImagenPipe,
     NoSanitizePipe,
-    YoutubePipe,
   ],
   imports: [
     CommonModule

@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { AboutPipe } from './pages/about.pipe';
 
+
 @NgModule({
   declarations: [AppComponent, AboutPipe],
   entryComponents: [],
