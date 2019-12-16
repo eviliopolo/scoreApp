@@ -35,7 +35,7 @@ export class ObjaprendizajePage implements OnInit {
         this.objetosaprendizajes = resp;
         this.segment.value = this.objetosaprendizajes[0].name;
         this.objaprendizaje = this.objetosaprendizajes[0];
-        //this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+        this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
     });
 
   }
@@ -49,6 +49,7 @@ export class ObjaprendizajePage implements OnInit {
 
   cargarObjetoAprendizaje( aprendizaje: string ) {
     this.objaprendizaje =this.objetosaprendizajes.filter(x => x.name ==aprendizaje)[0];
+    this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
     console.log('objetoAprendizaje',this.objaprendizaje);
     
   }
