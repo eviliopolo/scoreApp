@@ -7,7 +7,7 @@
 <ion-grid fixed>
     <ion-row>
       <ion-col>
-        <h3>Categorias</h3>
+        <h3></h3>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -17,24 +17,17 @@
       
         
         <ion-card *ngFor="let mc of gestorcontenidos" (click)="verobjetosAprendizaje(mc.id)">
-            <ion-card-header>
-                <ion-card-subtitle>                    
-                  <span class="text-primary" [innerHTML]="mc.name"></span>                                              
-                </ion-card-subtitle>
+            <ion-card-header>                
                 <ion-card-title class="text-primary" [innerHTML]="mc.name"></ion-card-title>
-              </ion-card-header>
-
-
-
-
-          <img [src]="mc.Image | imagen">
+              </ion-card-header>          
 
           <ion-card-content>
               <p>
-                {{ mc.name }}
+                
               </p>
-              <p><span>Puntaje</span> 
-                  {{ mc.name }}
+              <p><span >Puntaje</span> 
+                <ion-label slot="end"> {{ mc.points }} </ion-label>
+                  
                 </p>
             </ion-card-content>
         </ion-card>

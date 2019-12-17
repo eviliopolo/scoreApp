@@ -35,7 +35,15 @@ export class ObjaprendizajePage implements OnInit {
         this.objetosaprendizajes = resp;
         this.segment.value = this.objetosaprendizajes[0].name;
         this.objaprendizaje = this.objetosaprendizajes[0];
-        this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+
+
+        var contenido = this.objetosaprendizajes[0].content;
+        var contenido = contenido.replace('<figure class="media"><oembed url=', '<iframe style ="width:100%;min-height:250px;"  src='); 
+        var contenido = contenido.replace('</oembed></figure>', 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'); 
+
+        this.objaprendizaje.content = contenido;
+        
+        
     });
 
   }
@@ -49,8 +57,16 @@ export class ObjaprendizajePage implements OnInit {
 
   cargarObjetoAprendizaje( aprendizaje: string ) {
     this.objaprendizaje =this.objetosaprendizajes.filter(x => x.name ==aprendizaje)[0];
-    this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-    console.log('objetoAprendizaje',this.objaprendizaje);
+    //this.objaprendizaje.content = this.objaprendizaje.content;
+    
+    var contenido = this.objaprendizaje.content;
+    var contenido = contenido.replace('<figure class="media"><oembed url=', '<iframe style ="width:100%;min-height:250px;"  src='); 
+    var contenido = contenido.replace('</oembed></figure>', 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'); 
+
+    this.objaprendizaje.content = contenido;
+
+    //this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    console.log('objetoAprendizaje',this.objaprendizaje.content);
     
   }
 

@@ -86,12 +86,15 @@ export interface MicroContentMobile {
   id: number;
   name: string;
   image?: string;
-  points?: number;
+  points: number;
+  title:string;
+  content:string;
 }
 
 export interface ContentManager {
   id: number;
   name: string;
+  points:number;
 }
 
 export interface objectLearningMobile {

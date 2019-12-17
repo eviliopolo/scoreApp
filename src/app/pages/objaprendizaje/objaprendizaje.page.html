@@ -51,7 +51,9 @@
           <!--<img [src]="objaprendizaje.Image | imagen">-->
 
           <ion-card-content>
-              <div [innerHTML]="objaprendizaje.content | noSanitize"></div>
+              <div [innerHTML]='objaprendizaje.content | noSanitize'></div>
+
+              
 
               <p><span>Puntaje</span> 
                   {{ objaprendizaje.points }}
