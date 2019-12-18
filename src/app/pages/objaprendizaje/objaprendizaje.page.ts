@@ -10,7 +10,7 @@ import { IonSegment } from '@ionic/angular';
   styleUrls: ['./objaprendizaje.page.scss'],
 })
 export class ObjaprendizajePage implements OnInit {
-  @ViewChild(IonSegment, {static: true}) segment: IonSegment;
+  @ViewChild(IonSegment, {static: false}) segment: IonSegment;
 
   data: number;
   objetosaprendizajes: objectLearningMobile[] = [];
@@ -31,9 +31,9 @@ export class ObjaprendizajePage implements OnInit {
     
     this.microcontentServ.getObjectLearning(this.data)
     .subscribe(resp => {
-        console.log('Resp',resp);
         this.objetosaprendizajes = resp;
-        this.segment.value = this.objetosaprendizajes[0].name;
+        
+        console.log('Resp',this.objetosaprendizajes[0].name);
         this.objaprendizaje = this.objetosaprendizajes[0];
 
 
@@ -43,7 +43,7 @@ export class ObjaprendizajePage implements OnInit {
 
         this.objaprendizaje.content = contenido;
         
-        
+        this.segment.value = this.objetosaprendizajes[0].name;
     });
 
   }

@@ -2,24 +2,16 @@
 
   </app-header>
 
-<ion-content>
+<ion-content color ="dark">
     
-  <ion-grid fixed>
-      <ion-row>
-        <ion-col>
-          <h3>Mis contenidos finalizados</h3>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-    <ion-slides [options]="slideOpts">
+    <ion-slides [options]="slideOpts" >
   
         <ion-slide *ngFor="let mc of microcontenidosFinalizados">
           
-          <ion-card>
+          <ion-card color ="dark">
               <ion-card-header>
                   <ion-card-subtitle>                    
-                    <span class="text-primary" [innerHTML]="mc.Title"></span>                                              
+                    <span [innerHTML]="mc.Title"></span>                                              
                   </ion-card-subtitle>
                   <ion-card-title class="text-primary" [innerHTML]="mc.Name"></ion-card-title>
                 </ion-card-header>

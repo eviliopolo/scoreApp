@@ -2,25 +2,15 @@
 
 </app-header>
 
-<ion-content>
-  
-
-
-  
-
-      
-        
-        <ion-card *ngFor="let mc of microcontenidosActivos" (click)="vergestorcontenido(mc.id)">
+<ion-content color ="dark">        
+        <ion-card color ="dark" *ngFor="let mc of microcontenidosActivos" (click)="vergestorcontenido(mc.id)">
             <ion-card-header>
                 
-                <ion-card-title class="text-primary" [innerHTML]="mc.name"></ion-card-title>
+                <ion-card-title [innerHTML]="mc.name"></ion-card-title>
                 <ion-card-subtitle>                    
                     <span class="text-primary" [innerHTML]="mc.title"></span>                                              
                   </ion-card-subtitle>
               </ion-card-header>
-
-
-
 
           <img [src]="mc.image | imagen">
 

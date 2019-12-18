@@ -2,15 +2,9 @@
 
 </app-header>
 
-<ion-content>
+<ion-content color ="dark">
   
 <ion-grid fixed>
-    <ion-row>
-      <ion-col>
-        <h3>Mis objetos de aprendizaje</h3>
-      </ion-col>
-    </ion-row>
-
     <ion-row>
         <ion-col>
             <ion-segment scrollable 
@@ -36,11 +30,11 @@
 
       
         
-        <ion-card *ngIf="objaprendizaje">
+        <ion-card *ngIf="objaprendizaje" color ="dark">
           
             <ion-card-header>
                 <ion-card-subtitle>                    
-                  <span class="text-primary" [innerHTML]="objaprendizaje.name "></span>                                              
+                  <span [innerHTML]="objaprendizaje.name "></span>                                              
                 </ion-card-subtitle>
                 <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title"></ion-card-title>
               </ion-card-header>
@@ -50,7 +44,7 @@
 
           <!--<img [src]="objaprendizaje.Image | imagen">-->
 
-          <ion-card-content>
+          <ion-card-content color ="dark">
               <div [innerHTML]='objaprendizaje.content | noSanitize'></div>
 
               

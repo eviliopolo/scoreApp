@@ -1,5 +1,5 @@
-<ion-header no-border>
-    <ion-toolbar>
+<ion-header no-border >
+    <ion-toolbar color="dark">
   
       <ion-buttons slot="start">
   
@@ -10,16 +10,16 @@
       </ion-buttons>
   
   
-      <ion-title color="primary">Tablero</ion-title>
+      <ion-title>Tablero</ion-title>
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+  <ion-content color="dark">
   
     <ion-card href="/activos" class="activated">
-      <ion-card-header>        
-        <ion-card-subtitle>--</ion-card-subtitle>
-        <ion-card-title>Activos</ion-card-title>
+      <ion-card-header>                
+        <ion-card-title class="text-primary" >Activos</ion-card-title>
+        <ion-card-subtitle class="noticia-source-name" >Ver mis microcontenidos activos</ion-card-subtitle>       
       </ion-card-header>
     
       <ion-card-content>
@@ -29,8 +29,9 @@
 
     <ion-card href="/finalizados" class="activated">
       <ion-card-header>        
-        <ion-card-subtitle>--</ion-card-subtitle>
-        <ion-card-title>Finalizados</ion-card-title>
+        <ion-card-title class="text-primary">Finalizados</ion-card-title>
+        <ion-card-subtitle class="noticia-source-name" >Ver mis microcontenidos finalizados</ion-card-subtitle>  
+        
       </ion-card-header>
     
       <ion-card-content>
@@ -40,8 +41,9 @@
 
     <ion-card href="/mispuntos" class="activated">
       <ion-card-header>        
-        <ion-card-subtitle>--</ion-card-subtitle>
-        <ion-card-title>Mis puntos</ion-card-title>
+        
+        <ion-card-title class="text-primary"> Mis puntos</ion-card-title>
+        <ion-card-subtitle class="noticia-source-name" >Mis puntos acumulados</ion-card-subtitle>  
       </ion-card-header>
     
       <ion-card-content>
@@ -50,13 +52,14 @@
     </ion-card>
 
     <ion-card href="/contenidos" class="activated">
-      <ion-card-header>        
-        <ion-card-subtitle>--</ion-card-subtitle>
-        <ion-card-title>Juegos</ion-card-title>
+      <ion-card-header>                
+        <ion-card-title class="text-primary"> Juegos</ion-card-title>
+        <ion-card-subtitle class="noticia-source-name" >Juegos en APPSCORE</ion-card-subtitle> 
+
       </ion-card-header>
     
       <ion-card-content>
-        <ion-badge color="dark">1</ion-badge>
+        <ion-badge color="warning">1</ion-badge>
       </ion-card-content>
     </ion-card>
   </ion-content>

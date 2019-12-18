@@ -2,21 +2,11 @@
 
 </app-header>
 
-<ion-content>
+<ion-content color ="dark">
   
-<ion-grid fixed>
-    <ion-row>
-      <ion-col>
-        <h3></h3>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  
-
-      
+     
         
-        <ion-card *ngFor="let mc of gestorcontenidos" (click)="verobjetosAprendizaje(mc.id)">
+        <ion-card color ="dark" *ngFor="let mc of gestorcontenidos" (click)="verobjetosAprendizaje(mc.id)">
             <ion-card-header>                
                 <ion-card-title class="text-primary" [innerHTML]="mc.name"></ion-card-title>
               </ion-card-header>          
