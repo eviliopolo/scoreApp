@@ -13,11 +13,16 @@ import { UiServiceService } from 'src/app/services/ui-service.service';
 export class QuestionComponent implements OnInit {
   @Input() question: question;
   @Input() indice:number;
+  color: string;
+  texto: string;
+  disabled: boolean;
   constructor(private microcontentServ : MicrocontentsService,
               private uiService: UiServiceService) { }
 
   ngOnInit() {
     console.log('Favoritos', this.question );
+    this.texto ="Enviar respuesta";
+    this.disabled = false;
   }
 
   async enviarrespuestas ()
@@ -36,6 +41,9 @@ export class QuestionComponent implements OnInit {
     if ( actualizado ) {
       // toast con el mensaje de actualizado
       this.question.Responses =[];
+      this.color ="light";
+      this.texto ="Respuesta enviada";
+      this.disabled = true;
       this.uiService.presentToast( 'Informacion enviada correctamente' );
     } else {
       // toast con el error

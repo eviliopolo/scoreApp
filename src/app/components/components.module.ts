@@ -8,6 +8,7 @@ import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.compo
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './question/question.component';
 import { FormsModule } from '@angular/forms';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 
@@ -33,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     IonicModule,
     RouterModule,
     FormsModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }

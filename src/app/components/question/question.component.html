@@ -1,8 +1,9 @@
 <ion-card color="dark">
-    <ion-icon name="help-buoy" slot="start"></ion-icon>
-    <span class="text-primary"> {{ indice + 1 }}. </span>
-      <span class="noticia-source-name">{{ question.Text }}</span> 
-  <ion-card-header color="dark">
+    <ion-icon name="clipboard" slot="start"></ion-icon>   
+    <span> {{ indice + 1 }}. </span>  
+           
+      <span [innerHTML]='question.Text | noSanitize' ></span> 
+     <ion-card-header color="dark">
       
     <ion-card-subtitle>
           
@@ -12,15 +13,12 @@
   
       <!-- Checkboxes in a List -->
     <ion-list color="dark">
-      <ion-item color="dark" *ngFor="let response of question.Responses">
-        <ion-label>{{response.Text}}</ion-label>
+      <ion-item color="dark" *ngFor="let response of question.Responses">        
+        <div [innerHTML]='response.Text | noSanitize'></div>
         <ion-checkbox slot="end" [(ngModel)]="response.selected"></ion-checkbox>
       </ion-item>
     </ion-list>
-    <ion-button (click)="enviarrespuestas()" expand="block">    Enviar respuesta
+    <ion-button (click)="enviarrespuestas()" expand="block" [color] ='color' [disabled] ='disabled'>    {{texto}}
       <ion-icon  slot="icon-only" name="checkmark"></ion-icon>
     </ion-button>
-
-
-
 </ion-card>
