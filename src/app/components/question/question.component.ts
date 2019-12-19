@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { question } from 'src/app/interfaces/interfaces';
+import { MicrocontentsService } from 'src/app/services/microcontents.service';
+import { UiServiceService } from 'src/app/services/ui-service.service';
+
+
 
 @Component({
   selector: 'app-question',
@@ -6,9 +11,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./question.component.scss'],
 })
 export class QuestionComponent implements OnInit {
+  @Input() question: question;
+  @Input() indice:number;
+  constructor(private microcontentServ : MicrocontentsService,
+              private uiService: UiServiceService) { }
 
-  constructor() { }
+  ngOnInit() {
+    console.log('Favoritos', this.question );
+  }
 
-  ngOnInit() {}
+  async enviarrespuestas ()
+  {
+    console.log(this.question)
+
+    var responses = this.question.Responses.filter(r => r.selected);
+    let actualizado;
+    if (responses)
+    {
+      for(let data of responses) {
+        actualizado = await this.microcontentServ.saveQuestionResponse(this.question.Question_Id, data.Response_Id); 
+      }
+    }
+
+    if ( actualizado ) {
+      // toast con el mensaje de actualizado
+      this.question.Responses =[];
+      this.uiService.presentToast( 'Informacion enviada correctamente' );
+    } else {
+      // toast con el error
+      this.uiService.presentToast( 'No se pudo actualizar' );
+    }
+    
+
+
+    
+    
+  }
 
 }

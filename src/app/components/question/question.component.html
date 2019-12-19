@@ -1,3 +1,26 @@
-<p>
-  question works!
-</p>
+<ion-card color="dark">
+    <ion-icon name="help-buoy" slot="start"></ion-icon>
+    <span class="text-primary"> {{ indice + 1 }}. </span>
+      <span class="noticia-source-name">{{ question.Text }}</span> 
+  <ion-card-header color="dark">
+      
+    <ion-card-subtitle>
+          
+    </ion-card-subtitle>    
+  </ion-card-header>
+
+  
+      <!-- Checkboxes in a List -->
+    <ion-list color="dark">
+      <ion-item color="dark" *ngFor="let response of question.Responses">
+        <ion-label>{{response.Text}}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="response.selected"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="enviarrespuestas()" expand="block">    Enviar respuesta
+      <ion-icon  slot="icon-only" name="checkmark"></ion-icon>
+    </ion-button>
+
+
+
+</ion-card>

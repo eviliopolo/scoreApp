@@ -107,6 +107,26 @@ export interface objectLearningMobile {
   Image:string;
 }
 
+export interface question {
+  id: string;
+  ObjectLearning_Id: number;
+  Question_Id: number;
+  Text: string;
+  Points: number;  
+  Responses: response[];
+}
+
+export interface response {
+  id: string;
+  ResponseIndex: number;
+  Response_Id: number;
+  Text: string;
+  IsAproved: boolean;
+  AplyByType: boolean;
+  selected : boolean;
+}
+
+
 
 
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { environment } from '../../environments/environment';
-import { MicroContent, MicroContentRoot, MicroContentMobile, ContentManager, objectLearningMobile } from '../interfaces/interfaces';
+import { MicroContent, MicroContentRoot, MicroContentMobile, ContentManager, objectLearningMobile, question } from '../interfaces/interfaces';
 import { AuthenticationService } from './authentication.service';
 
 const URL = environment.url;
@@ -39,6 +39,21 @@ export class MicrocontentsService {
   getPoints(){    
     return this.http.get<number>(`${ URL }/api/score/getPoints?user=${ this.currentUser }`);
   }
+
+  getQuestionByObjectLearning(idObjectLearning: number){    
+    return this.http.get<question[]>(`${ URL }/api/score/questions?id=${ idObjectLearning }&user=${ this.currentUser }`);    
+  }
+
+  async saveQuestionResponse (idquestion:number, idresponse:number){
+    return new Promise( resolve => {            
+      this.http.get(`${ URL }/api/score/response?question=${ idquestion }&response=${ idresponse }&user=${ this.currentUser }`)
+        .subscribe( resp => {
+            resolve(true);
+        });            
+    });  
+  }
+
+  
 
 
 }

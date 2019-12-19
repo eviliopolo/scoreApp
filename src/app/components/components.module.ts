@@ -5,6 +5,12 @@ import { IonicModule } from '@ionic/angular';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { QuestionComponent } from './question/question.component';
+import { FormsModule } from '@angular/forms';
+
+
+
 
 
 
@@ -12,17 +18,21 @@ import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.compo
   declarations: [
     HeaderComponent,
     MenuComponent,
-    AvatarSelectorComponent
+    AvatarSelectorComponent,
+    QuestionComponent,
+    QuestionsComponent
   ],
   exports: [
     HeaderComponent,
     MenuComponent,
-    AvatarSelectorComponent
+    AvatarSelectorComponent,
+    QuestionsComponent,
   ],
   imports: [
     CommonModule,
     IonicModule,
     RouterModule,
+    FormsModule,
   ]
 })
 export class ComponentsModule { }
