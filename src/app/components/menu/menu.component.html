@@ -1,4 +1,4 @@
-<ion-menu side="start" 
+<ion-menu side="end"
             menuId="primerMenu"
             contentId="principal"
             color="dark">
@@ -14,9 +14,18 @@
         <ion-item [routerLink]="c.redirectTo" color="dark">
           <ion-icon slot="start" [name]="c.icon"></ion-icon>
           <ion-label color="primary">{{ c.name }}</ion-label>
-        </ion-item>
+        </ion-item>       
       </ion-menu-toggle>
+
+    <ion-menu-toggle>
+        <ion-item color="dark" (click)="logout()">
+            <ion-icon slot="start" name="exit"></ion-icon>
+            <ion-label color="danger">Salir</ion-label>
+        </ion-item> 
+    </ion-menu-toggle>
+
      
+      
      
     </ion-list>
   </ion-content>
