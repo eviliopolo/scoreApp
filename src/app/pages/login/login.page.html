@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content color="dark">
   <ion-slides class="mainSlide" #slidePrincipal>
     <ion-slide>
 
@@ -66,7 +66,7 @@
                         
                         <ion-list>
                             
-                            <ion-item>
+                            <ion-item color="dark">
                             <ion-label>Email</ion-label>
                             <ion-input name="email" 
                                         type="email"
@@ -75,7 +75,7 @@
                                         required></ion-input>
                             </ion-item>
 
-                            <ion-item>
+                            <ion-item color="dark">
                             <ion-label>Password</ion-label>
                             <ion-input name="password"
                                         type="password"
@@ -84,7 +84,7 @@
                                         required></ion-input>
                             </ion-item>
 
-                            <ion-item>
+                            <ion-item color="dark">
                             <ion-label>Confirmar password</ion-label>
                             <ion-input name="Confirmarpassword"
                                         type="password"
@@ -93,7 +93,7 @@
                                         required></ion-input>
                             </ion-item>
 
-                            <ion-item>
+                            <ion-item color="dark">
                             <ion-label>Nombre</ion-label>
                             <ion-input name="nombre"
                                         type="text"
@@ -101,7 +101,7 @@
                                         required></ion-input>
                             </ion-item>
 
-                            <ion-item>
+                            <ion-item color="dark">
                             <ion-label>Apellido</ion-label>
                             <ion-input name="apellido"
                                         type="text"
@@ -109,7 +109,7 @@
                                         required></ion-input>
                             </ion-item>
 
-                            <ion-item>
+                            <ion-item color="dark">
                               <ion-label>Usuario</ion-label>
                               <ion-input name="usuario"
                                           type="text"
@@ -117,14 +117,15 @@
                                           required></ion-input>
                               </ion-item>
 
-                              <ion-item>
-                                  <ion-label class="my-label">Registrate para recibir correos electronicos y conocer las ultimas novedades de SCORE</ion-label>
-                                <ion-checkbox color="primary"></ion-checkbox>                              
-                              </ion-item>
+                              <ion-item color="dark">
+                                  <ion-checkbox color="primary">  </ion-checkbox>                              
+                                  <p>  Registrate para recibir correos electronicos y conocer las ultimas novedades de SCORE</p>
+                                
+                              </ion-item >
 
-                              <ion-item class="item item-text-wrap"> 
-                                <ion-checkbox color="primary"></ion-checkbox>   
-                                <ion-label class="my-label">Al crear una cuenta, aceptas la politica de privacidad y los terminos de uso de SCORE</ion-label>                                                               
+                              <ion-item class="item item-text-wrap" color="dark"> 
+                                <ion-checkbox color="primary">  </ion-checkbox>   
+                                <p>  Al crear una cuenta, aceptas la politica de privacidad y los terminos de uso de SCORE</p>                                                               
                               </ion-item>
 
                               <span class="text-primary" (click)="VerTerminosCondiciones()"> Ver Terminos y condiciones </span>

@@ -1,17 +1,15 @@
-<ion-content>
+<ion-content color="dark">
 
 
-  <ion-slides pager="true" class="slide-full">
+  <ion-slides pager="true" class="slide-full" [options]="slideOpts" color="dark">
 
-    <ion-slide *ngFor="let slide of slides">
+    <ion-slide *ngFor="let slide of slides" color="dark">
 
-      <ion-card mode="ios">
+      <ion-card color="dark">
 
         <img [src]="slide.img" class="slide-image">
          
-        <ion-card-header>
-         <ion-card-title>   </ion-card-title>
-        </ion-card-header>
+       
         
         <ion-card-content>
           {{ slide.desc }}
@@ -19,14 +17,7 @@
       </ion-card>
 
     </ion-slide>
-    <ion-slide>
-      <ion-button expand="full"
-                  color="primary"
-                  fill="clear"
-                  (click)="onClick()">
-        Inscribete con nosotros!
-      </ion-button>
-    </ion-slide>
+    
   </ion-slides>
 </ion-content>
 

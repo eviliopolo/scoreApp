@@ -8,27 +8,28 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./banner.page.scss'],
 })
 export class BannerPage implements OnInit {
+  slideOpts = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    autoplay:true
+  };
+
 
   slides: { img: string, titulo: string, desc: string }[] = [
     {
-      img: '/assets/img/icono.png',
+      img: '/assets/img/slider1.png',
       titulo: 'APP SCORE',
-      desc: 'Sistema de Conocimiento Orientado a Resultado'
+      desc: 'AppScore'
     },
     {
-      img: '/assets/img/icono.png',
+      img: '/assets/img/slider2.png',
       titulo: 'APP SCORE 2',
-      desc: 'Sistema de Conocimiento Orientado a Resultado'
+      desc: 'AppScore'
     },
     {
-      img: '/assets/img/icono.png',
+      img: '/assets/img/slider3.png',
       titulo: 'APP SCORE 3',
-      desc: 'Sistema de Conocimiento Orientado a Resultado'
-    },
-    {
-      img: '/assets/img/icono.png',
-      titulo: 'APP SCORE 4',
-      desc: 'Sistema de Conocimiento Orientado a Resultado'
+      desc: 'AppScore'
     }
   ];
 
@@ -43,11 +44,6 @@ export class BannerPage implements OnInit {
 
   mostrarLogin() {
     this.navCtrl.navigateRoot( '/login', { animated: true } );
-  }
-
-  onClick() {
-    this.navCtrl.navigateBack('/login');
-
   }
 
 }

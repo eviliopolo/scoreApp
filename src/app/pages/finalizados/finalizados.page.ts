@@ -12,7 +12,7 @@ export class FinalizadosPage implements OnInit {
 
   slideOpts = {
     slidesPerView: 1.3,
-    freeMode: true
+    freeMode: true,
   };
 
   constructor(private microcontentServ : MicrocontentsService) { }
