@@ -5,23 +5,23 @@
         "redirectTo": "/miperfil"
     },
     {
-        "icon": "car",
+        "icon": "book",
         "name": "Activos",
         "redirectTo": "/activos"
     },
     {
-        "icon": "checkmark-circle-outline",
+        "icon": "ribbon",
         "name": "Finalizados",
         "redirectTo": "/finalizados"
     },
     {
-        "icon": "radio-button-on",
+        "icon": "trophy",
         "name": "Mis puntos",
         "redirectTo": "/mispuntos"
     },   
    
     {
-      "icon": "appstore",
+      "icon": "logo-game-controller-b",
       "name": "Juegos",
       "redirectTo": "/contenidos"
     },
