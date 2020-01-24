@@ -69,7 +69,7 @@ export class ObjaprendizajePage implements OnInit {
     //this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
     console.log('objetoAprendizaje',this.objaprendizaje.content);
 
-    this.microcontentServ.getQuestionByObjectLearning(103 /*this.objaprendizaje.id*/)
+    this.microcontentServ.getQuestionByObjectLearning(this.objaprendizaje.id)
     .subscribe(resp => {
         this.questions = resp;     
         console.log('questions', this.questions);                           

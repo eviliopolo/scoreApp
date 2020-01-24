@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { environment } from '../../environments/environment';
-import { MicroContent, MicroContentRoot, MicroContentMobile, ContentManager, objectLearningMobile, question } from '../interfaces/interfaces';
+import { MicroContent, MicroContentRoot, MicroContentMobile, ContentManager, objectLearningMobile, question, countobject } from '../interfaces/interfaces';
 import { AuthenticationService } from './authentication.service';
 
 const URL = environment.url;
@@ -51,6 +51,12 @@ export class MicrocontentsService {
             resolve(true);
         });            
     });  
+  }
+
+  getCountObject(){
+    this.currentUser = this.usuarioService.getCurrentUser();
+    console.log('Token Actual..........',this.currentUser)
+    return this.http.get<countobject>(`${ URL }/api/score/countobject?idUser=${ this.currentUser }`);
   }
 
   

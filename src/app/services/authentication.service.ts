@@ -19,7 +19,7 @@ export class AuthenticationService {
               private storage: Storage,
               private navCtrl: NavController) {}
 
-              login( email: string, password: string ) {
+              async login( email: string, password: string ) {
                 
 
                 const data = { email, password };            
@@ -30,6 +30,8 @@ export class AuthenticationService {
                       console.log(resp);                     
             
                       if ( resp['Response'] ) {
+                        console.log('en login',resp['Message']);
+                        this.token = null;
                         await this.guardarToken(resp['Message']);
                         resolve(true);
                       } else {
@@ -104,7 +106,7 @@ export class AuthenticationService {
             
             
               async guardarToken( token: string ) {
-            
+                console.log('Guardando el token',token)
                 this.token = token;
                 await this.storage.set('token', token);
             
@@ -114,10 +116,12 @@ export class AuthenticationService {
               }
             
               async cargarToken() {            
-                this.token = await this.storage.get('token') || null;            
+                this.token = await this.storage.get('token') || null;    
+                console.log('Cargando token', this.token);        
               }
 
-              getCurrentUser(){    
+              getCurrentUser(){
+                this.validaToken();   
                 console.log('IdUsuario',this.token)                                  
                 return this.token;            
               }
@@ -125,7 +129,7 @@ export class AuthenticationService {
             
             
               async validaToken(): Promise<boolean> {
-            
+                console.log('Validando token');
                 await this.cargarToken();
                 
                 

@@ -28,8 +28,8 @@
         <ion-card-subtitle class="noticia-source-name" > Ver mis microcontenidos activos</ion-card-subtitle>       
       </ion-card-header>
     
-      <ion-card-content>
-        <ion-badge color="success">Total 1</ion-badge>
+      <ion-card-content *ngIf="objcountobject">
+        <ion-badge color="success">Total {{ objcountobject.activenumber}} </ion-badge>
       </ion-card-content>
     </ion-card>
 
@@ -45,8 +45,8 @@
         <ion-card-subtitle class="noticia-source-name" > Ver mis microcontenidos finalizados</ion-card-subtitle>  
       </ion-card-header>
     
-      <ion-card-content>
-        <ion-badge color="danger">Total 1</ion-badge>
+      <ion-card-content *ngIf="objcountobject">
+        <ion-badge color="danger">Total {{ objcountobject.inactivednumber}}</ion-badge>
       </ion-card-content>
     </ion-card>
 
@@ -62,8 +62,8 @@
         <ion-card-subtitle class="noticia-source-name" > Mis puntos acumulados</ion-card-subtitle>  
       </ion-card-header>
     
-      <ion-card-content>
-        <ion-badge color="primary"> Total 1</ion-badge>
+      <ion-card-content *ngIf="objcountobject">
+        <ion-badge color="primary"> Total {{ objcountobject.totalpoints}}</ion-badge>
       </ion-card-content>
     </ion-card>
 

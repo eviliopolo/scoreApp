@@ -89,6 +89,7 @@ export interface MicroContentMobile {
   points: number;
   title:string;
   content:string;
+  imagebase64:any;
 }
 
 export interface ContentManager {
@@ -124,6 +125,12 @@ export interface response {
   IsAproved: boolean;
   AplyByType: boolean;
   selected : boolean;
+}
+
+export interface countobject {
+  activenumber: number;
+  inactivednumber: number;
+  totalpoints: number;
 }
 
 
