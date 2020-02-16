@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
   @ViewChild('slidePrincipal', {static: true}) slides: IonSlides;
 
   loginUser = {
-    email: '',
-    password: ''
+    email: 'adminscore@yopmail.com',
+    password: 'Pruebas123$'
   };
 
   registerUser: Usuario = {
@@ -52,8 +52,6 @@ export class LoginPage implements OnInit {
       // mostrar alerta de usuario y contraseña no correctos
       this.uiService.alertaInformativa('Usuario y contraseña no son correctos.');
     }
-
-
   }
 
   async registro( fRegistro: NgForm ) {
@@ -89,6 +87,10 @@ export class LoginPage implements OnInit {
   VerTerminosCondiciones()
   {
     this.navCtrl.navigateRoot( '/terminoscondiciones', { animated: true } );
+  }
+
+  gotoBanner(){
+    this.navCtrl.navigateRoot( '/banner', { animated: true } );
   }
 
 }

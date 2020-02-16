@@ -90,6 +90,7 @@ export interface MicroContentMobile {
   title:string;
   content:string;
   imagebase64:any;
+  endDate:Date;
 }
 
 export interface ContentManager {

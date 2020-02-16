@@ -33,4 +33,6 @@ export class ActivosPage implements OnInit {
     this.router.navigate(['gestorcontenido'], navigationExtras);    
   }
 
+
+
 }

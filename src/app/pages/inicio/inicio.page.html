@@ -8,85 +8,77 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="dark">
-  <ion-card href="/activos" class="activated">
-    <ion-card-header>
-      <ion-card-title class="text-primary">
-        <ion-thumbnail>
-          <ion-img src="/assets/Icono-Activo.svg"></ion-img>
-        </ion-thumbnail>
-        Activos
-      </ion-card-title>
-      <ion-card-subtitle class="noticia-source-name">
-        Ver mis microcontenidos activos</ion-card-subtitle
-      >
-    </ion-card-header>
 
-    <ion-card-content *ngIf="objcountobject">
-      <ion-badge color="success"
-        >Total {{ objcountobject.activenumber}}
-      </ion-badge>
-    </ion-card-content>
-  </ion-card>
+  <ion-content fullscreen color="dark">
+    <ion-list color="dark">
 
-  <ion-card href="/finalizados" class="activated">
-    <ion-card-header>
-      <ion-card-title class="text-primary">
-        <!-- <ion-icon name="close"></ion-icon> -->
-        <ion-thumbnail>
-          <ion-img src="/assets/Icono-Finalizado.svg"></ion-img>
-        </ion-thumbnail>
-        Finalizados
-      </ion-card-title>
-      <ion-card-subtitle class="noticia-source-name">
-        Ver mis microcontenidos finalizados</ion-card-subtitle
-      >
-    </ion-card-header>
+      <ion-card>
+      <ion-item href="/activos" class="activated" color="dark">               
+        <ion-label>
+          <h1 class="text-primary">Activos</h1>
+          <h2 class="noticia-source-name">Ver mis microcontenidos</h2>
+          <h2 class="noticia-source-name">activos</h2>
+          <br/>
+          
+          <div class="ion-padding-left">
+           <ion-badge  *ngIf="objcountobject" color="success">  Total {{ objcountobject.activenumber}}</ion-badge>          
+        </div>
+        </ion-label>
 
-    <ion-card-content *ngIf="objcountobject">
-      <ion-badge color="danger"
-        >Total {{ objcountobject.inactivednumber}}</ion-badge
-      >
-    </ion-card-content>
-  </ion-card>
+        <div slot="end" color="dark">
+          <ion-thumbnail>
+            <ion-img src="/assets/Icono-Activo.svg"></ion-img>
+          </ion-thumbnail>
+        </div>
+      </ion-item>
+    </ion-card>
 
-  <ion-card href="/mispuntos" class="activated">
-    <ion-card-header>
-      <ion-card-title class="text-primary">
-        <!--<ion-icon name="more"></ion-icon> -->
-        <ion-thumbnail>
-          <ion-img src="/assets/Icono-Puntos.svg"></ion-img>
-        </ion-thumbnail>
-        Mis puntos</ion-card-title
-      >
-      <ion-card-subtitle class="noticia-source-name">
-        Mis puntos acumulados</ion-card-subtitle
-      >
-    </ion-card-header>
+    <ion-card>
+      <ion-item href="/finalizados" class="activated" color="dark">
+        
+        <ion-label>
+          <h1 class="text-primary">Finalizados</h1>
+          <h2 class="noticia-source-name">Ver mis microcontenidos</h2>
+          <h2 class="noticia-source-name">finalizados</h2>
+          <br/>
+          
+          <div class="ion-padding-left">
+            <ion-badge *ngIf="objcountobject" slot="start" color="danger">  Total {{ objcountobject.inactivednumber}}</ion-badge>          
+          </div>
+        </ion-label>
 
-    <ion-card-content *ngIf="objcountobject">
-      <ion-badge color="primary">
-        Total {{ objcountobject.totalpoints}}</ion-badge
-      >
-    </ion-card-content>
-  </ion-card>
+        <div slot="end" color="dark">
+          <ion-thumbnail>
+            <ion-img src="/assets/Icono-Finalizado.svg"></ion-img>
+          </ion-thumbnail>
+        </div>
+      </ion-item>
+    </ion-card>
 
-  <ion-card href="/contenidos" class="activated">
-    <ion-card-header>
-      <ion-card-title class="text-primary">
-        <!--<ion-icon name="logo-game-controller-a"></ion-icon> -->
-        <ion-thumbnail>
-          <ion-img src="/assets/Icono-Juegos.svg"></ion-img>
-        </ion-thumbnail>
-        Juegos</ion-card-title
-      >
-      <ion-card-subtitle class="noticia-source-name">
-        Juegos en APPSCORE</ion-card-subtitle
-      >
-    </ion-card-header>
 
-    <ion-card-content>
-      <ion-badge color="warning">Total 0</ion-badge>
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+    <ion-card>
+      <ion-item href="/mispuntos" class="activated" color="dark">
+        
+        <ion-label>
+          <h1 class="text-primary">Mis puntos</h1>
+          <h2 class="noticia-source-name">Mis puntos acumulados</h2>
+          <br/>
+          
+          <div class="ion-padding-left">
+            <ion-badge *ngIf="objcountobject" slot="start" color="warning">  Total {{ objcountobject.totalpoints}}</ion-badge>  
+          </div>        
+        </ion-label>
+
+        <div slot="end" color="dark">
+          <ion-thumbnail>
+            <ion-img src="/assets/Icono-Puntos.svg"></ion-img>
+          </ion-thumbnail>
+        </div>
+      </ion-item>
+    </ion-card>
+
+      
+    </ion-list>
+  </ion-content>
+
+

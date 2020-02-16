@@ -1,3 +1,35 @@
 ion-card{
     border: 1px #ffffff3d solid;
 }
+
+
+ion-thumbnail {
+    min-width: 6rem;    
+    min-height: 6rem;
+    img {
+        max-width: 5rem;    
+        min-width: 5rem;
+    }
+}
+
+ion-list{
+    background-color:#222428;
+}
+
+ion-item {
+    min-height: 8rem;
+    
+}
+
+.ion-padding-left{
+    padding-left: 16px;
+}
+
+.text-on-bottom > .button-inner {
+    flex-direction: column;
+  }
+
+  .align-items-end{
+    flex-wrap: nowrap
+
+  }

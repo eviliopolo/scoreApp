@@ -3,10 +3,23 @@ ion-card{
 }
 
 ion-thumbnail {
-    min-width: 2rem;    
-    min-height: 2rem;
+    min-width: 6rem;    
+    min-height: 6rem;
     img {
-        max-width: 2rem;    
-        min-width: 2rem;
+        max-width: 5rem;    
+        min-width: 5rem;
     }
+}
+
+ion-list{
+    background-color:#222428;
+}
+
+ion-item {
+    min-height: 8rem;
+    
+}
+
+.ion-padding-left{
+    padding-left: 16px;
 }
