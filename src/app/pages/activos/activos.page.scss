@@ -1,35 +1,55 @@
-ion-card{
+ion-card {
     border: 1px #ffffff3d solid;
 }
 
+ion-title {
+    background-color: white;
+    background-color: #4a828d !important;
+}
 
 ion-thumbnail {
-    min-width: 6rem;    
+    min-width: 6rem;
     min-height: 6rem;
     img {
-        max-width: 5rem;    
+        max-width: 5rem;
         min-width: 5rem;
     }
 }
 
-ion-list{
-    background-color:#222428;
+ion-list {
+    background-color: white;
+    border: 1px #e8e9e9 solid;
 }
 
 ion-item {
     min-height: 8rem;
-    
 }
 
-.ion-padding-left{
+.ion-padding-left {
     padding-left: 16px;
 }
 
-.text-on-bottom > .button-inner {
+.text-on-bottom>.button-inner {
     flex-direction: column;
-  }
+}
 
-  .align-items-end{
+.align-items-end {
     flex-wrap: nowrap
+}
 
-  }
+ion-content {
+    background-color: #efefef !important;
+}
+
+ion-label {
+    color: #4a828d !important;
+}
+
+span {
+    color: #4a828d !important;
+}
+
+ion-slide {
+    background-color: #efefef !important;
+    //background: url('src/assets/img/Fondo.png');
+}

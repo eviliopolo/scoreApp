@@ -1,53 +1,33 @@
-<ion-content color="dark">
+<ion-content color="white">
+    <ion-slides pager="true" class="slide-full" [options]="slideOpts" color="white">
+        <ion-slide *ngFor="let slide of slides" color="white">
+            <ion-card color="white">
+                <img [src]="slide.img" class="slide-image">
 
+            </ion-card>
 
-  <ion-slides pager="true" class="slide-full" [options]="slideOpts" color="dark">
+        </ion-slide>
 
-    <ion-slide *ngFor="let slide of slides" color="dark">
-
-      <ion-card color="dark">
-
-        <img [src]="slide.img" class="slide-image">
-         
-       
-        
-        <ion-card-content>
-          {{ slide.desc }}
-        </ion-card-content>
-      </ion-card>
-
-    </ion-slide>
-    
-  </ion-slides>
+    </ion-slides>
 </ion-content>
 
 
 <ion-footer no-border>
-  <ion-toolbar>
-    <ion-row>
+    <ion-toolbar>
+        <ion-row>
 
-      <ion-col>
-          <ion-button shape="round"
-                      expand="full"
-                      size="small"
-                      fill="outline"
-                      color="tertiary"
-                      (click)="mostrarRegistro()">
-            Ingresar
-          </ion-button>
-      </ion-col>
+            <ion-col>
+                <ion-button shape="round" expand="full" size="small" fill="outline" color="tertiary" (click)="mostrarRegistro()">
+                    Ingresar
+                </ion-button>
+            </ion-col>
 
-      <ion-col>
-        <ion-button shape="round"
-                    expand="full"
-                    size="small"
-                    fill="outline"
-                    color="tertiary"
-                    (click)="mostrarLogin()">
-          Registrarme
-        </ion-button>
-      </ion-col>
+            <ion-col>
+                <ion-button shape="round" expand="full" size="small" fill="outline" color="tertiary" (click)="mostrarLogin()">
+                    Registrarme
+                </ion-button>
+            </ion-col>
 
-    </ion-row>
-  </ion-toolbar>
+        </ion-row>
+    </ion-toolbar>
 </ion-footer>

@@ -1,4 +1,5 @@
-.mainSlide, .mainSlide ion-slide {
+.mainSlide,
+.mainSlide ion-slide {
     width: 100%;
     height: 100%;
 }
@@ -17,32 +18,36 @@ img {
     opacity: 1 !important;
 }
 
-ion-slide{
-    background: url('src/assets/img/Fondo.png');
+ion-slide {
+    background-color: #efefef;
+    //background: url('src/assets/img/Fondo.png');
 }
 
-ion-label{
-    color:white;
+ion-label {
+    color: #4a828d !important;
 }
 
-ion-item{
-    color:#222428;
-    
+ion-item {
+    color: #222428;
 }
 
-.input-wrapper{
+.input-wrapper {
     background-color: transparent !important;
 }
 
-.item-native{
+.item-native {
     background-color: transparent !important;
 }
 
-
-
-ion-list{
-    background-color:#222428;
+ion-list {
+    background-color: #efefef !important;
 }
-p{
+
+p {
     font-size: 0.68em !important;
+}
+
+img {
+    width: 80%;
+    height: 90%;
 }

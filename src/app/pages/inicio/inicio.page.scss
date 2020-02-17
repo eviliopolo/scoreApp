@@ -1,25 +1,49 @@
-ion-card{
-    border: 1px #ffffff3d solid;
+ion-card {
+    background-color: white !important;
+}
+
+ion-slide {
+    background-color: #efefef;
+    //background: url('src/assets/img/Fondo.png');
 }
 
 ion-thumbnail {
-    min-width: 6rem;    
+    min-width: 6rem;
     min-height: 6rem;
     img {
-        max-width: 5rem;    
+        max-width: 5rem;
         min-width: 5rem;
     }
 }
 
-ion-list{
-    background-color:#222428;
+ion-list {
+    background-color: #efefef;
 }
 
 ion-item {
     min-height: 8rem;
-    
 }
 
-.ion-padding-left{
+.ion-padding-left {
     padding-left: 16px;
+}
+
+ion-content {
+    background-color: #efefef;
+}
+
+h1 h2 h3 {
+    color: #4a828d !important;
+}
+
+ion-label {
+    color: #4a828d !important;
+}
+
+ion-badge {
+    background-color: #4a828d !important;
+}
+
+ion-title {
+    color: #4a828d !important;
 }

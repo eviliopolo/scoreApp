@@ -1,31 +1,30 @@
 <app-header title="Finalizados">
 
-  </app-header>
+</app-header>
 
-<ion-content color ="dark">   
-          
-          <ion-card color ="dark" *ngFor="let mc of microcontenidosFinalizados">
-              <ion-card-header>
-                  <ion-card-subtitle>                    
-                    <span [innerHTML]="mc.Title"></span>                                              
-                  </ion-card-subtitle>
-                  <ion-card-title class="text-primary" [innerHTML]="mc.Name"></ion-card-title>
-                </ion-card-header>
+<ion-content>
 
-                <img [src]="mc.Image | imagebase64">
+    <ion-card *ngFor="let mc of microcontenidosFinalizados">
+        <ion-card-header>
+            <ion-card-subtitle>
+                <span [innerHTML]="mc.Title"></span>
+            </ion-card-subtitle>
+            <ion-card-title class="text-primary" [innerHTML]="mc.Name"></ion-card-title>
+        </ion-card-header>
 
-            <ion-card-content>
-        
-                  <div [innerHTML]='mc.Content | noSanitize'></div>
-              
-                <p><span>Puntaje</span> 
-                    {{ mc.PointsApproval }}
-                  </p>
-                  
-              </ion-card-content>
-          </ion-card>
-      
-      
+        <img [src]="mc.Image | imagebase64">
+
+        <ion-card-content>
+
+            <div [innerHTML]='mc.Content | noSanitize'></div>
+
+            <p><span>Puntaje</span> {{ mc.PointsApproval }}
+            </p>
+
+        </ion-card-content>
+    </ion-card>
+
+
 
 
 </ion-content>

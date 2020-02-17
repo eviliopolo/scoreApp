@@ -7,7 +7,7 @@ ion-card {
 }
 
 .slide-image {
-   // width: 100px;
+    // width: 100px;
     text-align: center;
     display: block;
     margin-left: auto;
@@ -29,13 +29,13 @@ ion-card-content {
     background-color: #383838f2;
 }
 
-ion-slide{
-    background: url('src/assets/img/Fondo.png');
+ion-slide {
+    //background: url('src/assets/img/Fondo.png');
     width: 90%;
 }
 
-ion-footer{
-    background-color: black;
+ion-footer {
+    background-color: white;
 }
 
 .avatar {
@@ -44,4 +44,3 @@ ion-footer{
     margin-left: auto;
     margin-right: auto;
 }
-

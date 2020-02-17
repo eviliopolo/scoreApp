@@ -1,12 +1,24 @@
-
 ion-segment-button {
-    background-color: var( --ion-color-dark ) !important;
-    color: white !important;
+    background-color: #efefef !important;
+    color: black !important;
 }
 
 .segment-button-checked {
-    color: var( --ion-color-primary ) !important;
+    color: #4a828d !important;
 }
-ion-card{
+
+ion-card {
     border: 1px #ffffff3d solid;
+}
+
+ion-content {
+    background-color: #efefef;
+}
+
+ion-card-title {
+    color: #4a828d;
+}
+
+span {
+    color: #4a828d;
 }

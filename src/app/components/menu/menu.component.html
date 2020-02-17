@@ -1,33 +1,24 @@
-<ion-menu side="end"
-            menuId="primerMenu"
-            contentId="principal"
-            color="dark">
-  <ion-header>
-    <ion-toolbar color="dark">
-      <ion-title>Menú Principal</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content color="dark">
-    <ion-list>
-     
-      <ion-menu-toggle *ngFor="let c of componentes | async">
-        <ion-item [routerLink]="c.redirectTo" color="dark">
-          <ion-icon slot="start" [name]="c.icon"></ion-icon>
-          <ion-label color="primary">{{ c.name }}</ion-label>
-        </ion-item>       
-      </ion-menu-toggle>
+<ion-menu side="end" menuId="primerMenu" contentId="principal">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menú Principal</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle *ngFor="let c of componentes | async">
+                <ion-item [routerLink]="c.redirectTo">
+                    <ion-icon slot="start" [name]="c.icon"></ion-icon>
+                    <ion-label color="#4a828d">{{ c.name }}</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
 
-    <ion-menu-toggle>
-        <ion-item color="dark" (click)="logout()">
-            <ion-icon slot="start" name="exit"></ion-icon>
-            <ion-label color="danger">Salir</ion-label>
-        </ion-item> 
-    </ion-menu-toggle>
-
-     
-      
-     
-    </ion-list>
-  </ion-content>
+            <ion-menu-toggle>
+                <ion-item (click)="logout()">
+                    <ion-icon slot="start" name="exit"></ion-icon>
+                    <ion-label color="danger">Salir</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
 </ion-menu>
-  
