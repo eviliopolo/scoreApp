@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
 import { objectLearningMobile, question } from 'src/app/interfaces/interfaces';
 import { MicrocontentsService } from 'src/app/services/microcontents.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,6 +16,9 @@ export class ObjaprendizajePage implements OnInit {
   objetosaprendizajes: objectLearningMobile[] = [];
   objaprendizaje: objectLearningMobile;
   questions: question[] = [];
+  disabledButtonPrevious: boolean;
+  disabledButtonNext: boolean;
+  currentIndex: number;
   constructor(private microcontentServ : MicrocontentsService
               ,private route: ActivatedRoute
               , private router: Router) { 
@@ -29,21 +32,23 @@ export class ObjaprendizajePage implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.disabledButtonPrevious = true;
+    this.disabledButtonNext = true;
     this.microcontentServ.getObjectLearning(this.data)
     .subscribe(resp => {
-        this.objetosaprendizajes = resp;    
-        
-        this.segment.value = this.objetosaprendizajes[0].name;    
+        this.objetosaprendizajes = resp; 
 
-        console.log('Resp',this.objetosaprendizajes[0].name);
-            this.objaprendizaje = this.objetosaprendizajes[0];
-    
-            var contenido = this.objetosaprendizajes[0].content;
-            var contenido = contenido.replace('<figure class="media"><oembed url=', '<iframe style ="width:100%;min-height:250px;"  src='); 
-            var contenido = contenido.replace('</oembed></figure>', 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'); 
-    
-            this.objaprendizaje.content = contenido;
+        console.log('Longitud de arregle: ', this.objetosaprendizajes.length);
+        
+        if (this.objetosaprendizajes.length > 0){
+          //this.segment.value = this.objetosaprendizajes[0].title;    
+          this.currentIndex = 0;
+          this.ShowObjetoAprendizaje();
+        }
+        else
+          console.log('No se encontraron objetos de aprendizaje');
+        
+       
     });
    
   }
@@ -56,8 +61,59 @@ export class ObjaprendizajePage implements OnInit {
 
   }
 
+  Previous(){
+    if (this.currentIndex > 0){
+      this.currentIndex--;
+    }   
+
+    this.ShowObjetoAprendizaje();
+  }
+
+  Next(){
+    if (this.currentIndex < (this.objetosaprendizajes.length - 1)){
+      this.currentIndex++;
+    }
+   
+
+    this.ShowObjetoAprendizaje();
+  }
+
+
+  ShowObjetoAprendizaje() {
+    console.log('current index',this.currentIndex);
+
+    
+    this.disabledButtonPrevious = (this.currentIndex== 0);
+
+      
+
+    this.disabledButtonNext = (this.currentIndex == (this.objetosaprendizajes.length - 1));
+     
+
+
+    this.objaprendizaje =this.objetosaprendizajes[this.currentIndex];
+    //this.objaprendizaje.content = this.objaprendizaje.content;
+    
+    var contenido = this.objaprendizaje.content;
+    var contenido = contenido.replace('<figure class="media"><oembed url=', '<iframe style ="width:100%;min-height:250px;"  src='); 
+    var contenido = contenido.replace('</oembed></figure>', 'frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'); 
+
+    this.objaprendizaje.content = contenido;
+
+    //this.objaprendizaje.content ='<iframe width="560" height="315" src="https://www.youtube.com/embed/6kqe2ICmTxc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    //console.log('objetoAprendizaje',this.objaprendizaje.content);
+
+    this.microcontentServ.getQuestionByObjectLearning(this.objaprendizaje.id)
+    .subscribe(resp => {
+        this.questions = resp;     
+        //console.log('questions', this.questions);                           
+    });
+    
+  }
+
+
   cargarObjetoAprendizaje( aprendizaje: string ) {
-    this.objaprendizaje =this.objetosaprendizajes.filter(x => x.name ==aprendizaje)[0];
+    this.objaprendizaje =this.objetosaprendizajes.filter(x => x.title ==aprendizaje)[0];
     //this.objaprendizaje.content = this.objaprendizaje.content;
     
     var contenido = this.objaprendizaje.content;
