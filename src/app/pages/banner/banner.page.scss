@@ -44,3 +44,13 @@ ion-footer {
     margin-left: auto;
     margin-right: auto;
 }
+
+ion-button {
+    background-color: #4a828d !important;
+    color: white !important;
+    border-radius: 20px;
+}
+
+:focus {
+    background-color: #457079 !important;
+}

@@ -1,101 +1,35 @@
 <app-header title="Aprendizaje">
-
 </app-header>
+<ion-content>
+    <ion-card *ngIf="objaprendizaje">
+        <ion-card-header>
+            <ion-card-subtitle>
+            </ion-card-subtitle>
+            <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title"></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <div [innerHTML]='objaprendizaje.content | noSanitize'></div>
+            <p><span>Puntaje</span> {{ objaprendizaje.points }}
+            </p>
+        </ion-card-content>
+    </ion-card>
 
-<ion-content color ="dark">
-  <!--
-<ion-grid fixed>
-    <ion-row>
-        <ion-col>
-            <ion-segment scrollable 
-                mode="md" 
-                color="primary"
-                (ionChange)="cambioCategoria( $event )">                
-              <ion-segment-button mode="md"
-                        *ngFor="let mc of objetosaprendizajes"
-                        [value]="mc.title">
-              <ion-label text-capitalize>{{ mc.title }}</ion-label>
-              </ion-segment-button>
-            </ion-segment>
-          </ion-col>
-      </ion-row>
-    
-    
-  </ion-grid>
-  -->
-
-    
-  
-
-  
-
-      
-        
-        <ion-card *ngIf="objaprendizaje" color ="dark">
-          
-            <ion-card-header>
-                <ion-card-subtitle>
-                  <!--                    
-                  <span [innerHTML]="objaprendizaje.name "></span>    
-                  -->                                          
-                </ion-card-subtitle>
-                <ion-card-title class="text-primary" [innerHTML]="objaprendizaje.title"></ion-card-title>
-              </ion-card-header>
-            
-
-
-
-          <!--<img [src]="objaprendizaje.Image | imagen">-->
-
-          <ion-card-content color ="dark">
-              <div [innerHTML]='objaprendizaje.content | noSanitize'></div>
-
-              
-
-              <p><span>Puntaje</span> 
-                  {{ objaprendizaje.points }}
-                </p>
-            </ion-card-content>
-        </ion-card>
-
-        <app-questions [questions]="questions"></app-questions>
-    
-      
-      
-    
-
+    <app-questions [questions]="questions"></app-questions>
 </ion-content>
-<ion-footer color="dark">
-  <ion-toolbar color="dark">
-    <ion-buttons slot="start">
-      <ion-button
-      shape="round"
-      expand="full"
-      size="small"
-      fill="outline"
-      color="tertiary"
-      [disabled] ='disabledButtonPrevious'
-      (click)="Previous()">
-        <ion-icon slot="start" name="arrow-round-back"></ion-icon>
-        Anterior
-      </ion-button
-      >
-    </ion-buttons>
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button shape="round" expand="full" size="small" fill="outline" [disabled]='disabledButtonPrevious' (click)="Previous()">
+                <ion-icon slot="start" name="arrow-round-back"></ion-icon>
+                Anterior
+            </ion-button>
+        </ion-buttons>
 
-    <ion-buttons slot="end">
-      <ion-button
-      shape="round"
-      expand="full"
-      size="small"
-      fill="outline"
-      color="tertiary"
-      (click)="Next()"
-      [disabled] ='disabledButtonNext'
-      >
-        <ion-icon slot="end" name="arrow-round-forward"></ion-icon>
-        Siguiente
-      </ion-button
-      >
-    </ion-buttons>
-  </ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button shape="round" expand="full" size="small" fill="outline" (click)="Next()" [disabled]='disabledButtonNext'>
+                <ion-icon slot="end" name="arrow-round-forward"></ion-icon>
+                Siguiente
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-footer>
