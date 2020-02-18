@@ -15,12 +15,9 @@
         <img [src]="mc.Image | imagebase64">
 
         <ion-card-content>
-
             <div [innerHTML]='mc.Content | noSanitize'></div>
-
             <p><span>Puntaje</span> {{ mc.PointsApproval }}
             </p>
-
         </ion-card-content>
     </ion-card>
 

@@ -8,19 +8,21 @@ ion-segment-button {
 }
 
 ion-card {
-    border: 1px #ffffff3d solid;
+    border: 1px #ffffff3d solid !important;
+    --background: white;
 }
 
 ion-content {
-    background-color: #efefef;
+    --background: #efefef !important;
+    background-color: #efefef !important;
 }
 
 ion-card-title {
-    color: #4a828d;
+    color: #4a828d !important;
 }
 
 span {
-    color: #4a828d;
+    color: #4a828d !important;
 }
 
 ion-button {

@@ -1,3 +1,22 @@
-ion-list{
-    background-color:#222428;
+ion-list {
+    background-color: #efefef;
+}
+
+ion-button {
+    --background: #4a828d;
+    background-color: #4a828d;
+    color: white;
+    border-radius: 20px;
+}
+
+span {
+    color: black;
+}
+
+.p {
+    padding-left: 15px !important;
+}
+
+ion-card {
+    --background: white;
 }

@@ -1,5 +1,6 @@
 ion-card {
     border: 1px #ffffff3d solid;
+    --background: white;
 }
 
 ion-list {
@@ -12,4 +13,8 @@ ion-card-title {
 
 ion-icon {
     color: #4a828d;
+}
+
+ion-content {
+    --background: #efefef !important;
 }

@@ -1,24 +1,19 @@
-<ion-card color="dark">
-    <ion-icon name="clipboard" slot="start"></ion-icon>   
-    <span> {{ indice + 1 }}. </span>  
-           
-      <span [innerHTML]='question.Text | noSanitize' ></span> 
-     <ion-card-header color="dark">
-      
-    <ion-card-subtitle>
-          
-    </ion-card-subtitle>    
-  </ion-card-header>
-
-  
-      <!-- Checkboxes in a List -->
-    <ion-list color="dark">
-      <ion-item color="dark" *ngFor="let response of question.Responses">        
-        <div [innerHTML]='response.Text | noSanitize'></div>
-        <ion-checkbox slot="end" [(ngModel)]="response.selected"></ion-checkbox>
-      </ion-item>
+<ion-card>
+    <ion-card-header>
+        <ion-icon name="clipboard" slot="start"></ion-icon>
+        <span> {{ indice + 1 }}. </span>
+        <span [innerHTML]='question.Text | noSanitize'></span>
+        <ion-card-subtitle>
+        </ion-card-subtitle>
+    </ion-card-header>
+    <!-- Checkboxes in a List -->
+    <ion-list>
+        <ion-item *ngFor="let response of question.Responses">
+            <div [innerHTML]='response.Text | noSanitize'></div>
+            <ion-checkbox slot="end" [(ngModel)]="response.selected"></ion-checkbox>
+        </ion-item>
     </ion-list>
-    <ion-button (click)="enviarrespuestas()" expand="block" [color] ='color' [disabled] ='disabled'>    {{texto}}
-      <ion-icon  slot="icon-only" name="checkmark"></ion-icon>
+    <ion-button (click)="enviarrespuestas()" expand="block" [disabled]='disabled'> {{texto}}
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
     </ion-button>
 </ion-card>

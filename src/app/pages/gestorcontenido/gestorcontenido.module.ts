@@ -25,4 +25,4 @@ const routes: Routes = [
   ],
   declarations: [GestorcontenidoPage]
 })
-export class GestorcontenidoPageModule {}
+export class GestorcontenidoPageModule { }
