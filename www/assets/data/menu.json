@@ -21,11 +21,6 @@
     },   
    
     {
-      "icon": "logo-game-controller-b",
-      "name": "Juegos",
-      "redirectTo": "/contenidos"
-    },
-    {
       "icon": "key",
       "name": "Cambiar contraseña",
       "redirectTo": "/changepassword"
