@@ -1,10 +1,7 @@
 <ion-card>
     <ion-card-header>
         <ion-icon name="clipboard" slot="start"></ion-icon>
-        <span> {{ indice + 1 }}. </span>
-        <span [innerHTML]='question.Text | noSanitize'></span>
-        <ion-card-subtitle>
-        </ion-card-subtitle>
+        <h3>Pregunta N° {{ indice + 1 }}.<span [innerHTML]='question.Text | noSanitize'></span></h3>
     </ion-card-header>
     <!-- Checkboxes in a List -->
     <ion-list>
