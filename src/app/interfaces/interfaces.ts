@@ -38,6 +38,10 @@ export interface MicroContentRoot {
   UserCreated?: any;
   DateModified?: any;
   UserModified?: any;
+
+  endDate:Date;
+  AdvancePercentage:number;
+  endDateDesc:string;
 }
 
 
@@ -91,6 +95,8 @@ export interface MicroContentMobile {
   content:string;
   imagebase64:any;
   endDate:Date;
+  AdvancePercentage:number;
+  endDateDesc:string;
 }
 
 export interface ContentManager {

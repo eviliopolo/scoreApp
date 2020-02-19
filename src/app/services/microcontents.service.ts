@@ -59,6 +59,16 @@ export class MicrocontentsService {
     return this.http.get<countobject>(`${ URL }/api/score/countobject?idUser=${ this.currentUser }`);
   }
 
+
+  async calculateProgressPercentage (idcategory:number, idobjectlearning:number, microcontentId){
+    return new Promise( resolve => {            
+      this.http.get(`${ URL }/api/score/calculateProgressPercentage?categoryId=${ idcategory }&objectLearningId=${ idobjectlearning }&token=${ this.currentUser } &microContentId=${ microcontentId }`)
+        .subscribe( resp => {
+            resolve(true);
+        });            
+    });  
+  }
+
   
 
 

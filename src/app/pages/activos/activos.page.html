@@ -19,14 +19,14 @@
             <ion-row color="white">
                 <ion-col size=5>
                     <ion-icon name="calendar" color="primary"></ion-icon>
-                    <span> 02-Feb-20</span>
+                    <span> {{mc.endDateDesc}}</span>
                 </ion-col>
                 <ion-col size=3>
                     <ion-icon name="trophy" item-left color="primary"></ion-icon>
-                    <span>10</span></ion-col>
+                    <span>{{mc.points}}</span></ion-col>
                 <ion-col size=4>
-                    <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
-                    <ion-label>50%</ion-label>
+                    <ion-progress-bar color="primary" [value]="mc.AdvancePercentage / 100"></ion-progress-bar>
+                    <ion-label>{{mc.AdvancePercentage}}%</ion-label>
                 </ion-col>
 
             </ion-row>

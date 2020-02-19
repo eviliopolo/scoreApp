@@ -17,7 +17,7 @@ export class ActivosPage implements OnInit {
   ngOnInit() {
     this.microcontentServ.getMicroContentActive()
     .subscribe(resp => {
-        console.log('Resp',resp);
+        console.log('Microcontent',resp);
         this.microcontenidosActivos = resp;
     });
   }

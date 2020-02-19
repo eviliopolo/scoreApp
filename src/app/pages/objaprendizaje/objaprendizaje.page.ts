@@ -13,6 +13,7 @@ export class ObjaprendizajePage implements OnInit {
   @ViewChild(IonSegment, {static: false}) segment: IonSegment;
 
   data: number;
+  idMicrocontenido: number;
   objetosaprendizajes: objectLearningMobile[] = [];
   objaprendizaje: objectLearningMobile;
   questions: question[] = [];
@@ -26,6 +27,7 @@ export class ObjaprendizajePage implements OnInit {
                 this.route.queryParams.subscribe(params => {
                   if (this.router.getCurrentNavigation().extras.state) {
                     this.data = this.router.getCurrentNavigation().extras.state.idCategory;
+                    this.idMicrocontenido = this.router.getCurrentNavigation().extras.state.idMicrocontenido;
                   }
                 });
 
@@ -38,7 +40,7 @@ export class ObjaprendizajePage implements OnInit {
     .subscribe(resp => {
         this.objetosaprendizajes = resp; 
 
-        console.log('Longitud de arregle: ', this.objetosaprendizajes.length);
+        console.log('ID MICROCONTENIDO: ', this.idMicrocontenido);
         
         if (this.objetosaprendizajes.length > 0){
           //this.segment.value = this.objetosaprendizajes[0].title;    
@@ -82,6 +84,9 @@ export class ObjaprendizajePage implements OnInit {
   ShowObjetoAprendizaje() {
     console.log('current index',this.currentIndex);
 
+
+    
+
     
     this.disabledButtonPrevious = (this.currentIndex== 0);
 
@@ -92,7 +97,8 @@ export class ObjaprendizajePage implements OnInit {
 
 
     this.objaprendizaje =this.objetosaprendizajes[this.currentIndex];
-    //this.objaprendizaje.content = this.objaprendizaje.content;
+    
+    this.microcontentServ.calculateProgressPercentage(this.data,this.objaprendizaje.id, this.idMicrocontenido); 
     
     var contenido = this.objaprendizaje.content;
     var contenido = contenido.replace('<figure class="media"><oembed url=', '<iframe style ="width:100%;min-height:250px;"  src='); 

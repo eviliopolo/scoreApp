@@ -38,7 +38,8 @@ export class GestorcontenidoPage implements OnInit {
 
     let navigationExtras: NavigationExtras = {
       state: {
-        idCategory: id
+        idCategory: id,
+        idMicrocontenido:this.data
       }      
     };
     this.router.navigate(['objaprendizaje'], navigationExtras);    

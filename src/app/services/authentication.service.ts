@@ -106,7 +106,6 @@ export class AuthenticationService {
             
             
               async guardarToken( token: string ) {
-                console.log('Guardando el token',token)
                 this.token = token;
                 await this.storage.set('token', token);
             
